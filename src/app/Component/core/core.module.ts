@@ -19,13 +19,13 @@ import {MatTreeModule} from '@angular/material/tree';
     MatButtonModule,
     MatSidenavModule,
     MatTreeModule
-    
+
   ],
   exports:[
     HeaderComponent,
     SidenavComponent
   ]
-  
-  
+
+
 })
 export class CoreModule { }
