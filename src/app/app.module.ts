@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './Component/core/core.module';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { RegistrationModule } from './Component/registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    NgbPaginationModule, NgbAlertModule
+    NgbPaginationModule,
+     NgbAlertModule,
+     RegistrationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
