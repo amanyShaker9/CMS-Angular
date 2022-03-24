@@ -10,7 +10,17 @@ import { CoreModule } from './Component/core/core.module';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
+import { RouterModule, Routes } from '@angular/router';
+import { DoctorModule } from './Component/doctor/doctor.module';
+import { SignupComponent } from './Component/registration/signup/signup.component';
+import { SigninComponent } from './Component/registration/signin/signin.component';
+const routes:Routes=[
+  // {path:'',redirectTo:'signUp',pathMatch:"full"},
+  {path:'register',component:SignupComponent,pathMatch:"full"},
+  {path:'login',component:SigninComponent,pathMatch:"full"},
 
+  
+]
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +34,9 @@ import { AppointmentModule } from './Component/appointment/appointment.module';
     NgbPaginationModule,
      NgbAlertModule,
      RegistrationModule,
-     AppointmentModule
+     AppointmentModule,
+     RouterModule.forRoot(routes),
+     DoctorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

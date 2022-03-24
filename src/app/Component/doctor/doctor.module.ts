@@ -16,14 +16,14 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
     DoctorListComponent,
     DoctorProfileComponent,
     DeleteDoctorComponent,
-
+    
     DoctorHomeComponent
   ],
   imports: [
     CommonModule
   ],
   exports:[
-
+    AddDoctorComponent,
     DoctorHomeComponent,
 
   ]

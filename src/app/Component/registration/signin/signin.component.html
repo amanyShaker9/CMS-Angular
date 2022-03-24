@@ -3,8 +3,8 @@
         <div class="customApp col-md-6">
             <img  src="../../../assets/signup.png"/>
            </div>
-           <div class="col-md-6 col-12 ">
-               <div class="row g-0 my-3 justify-content-center align-items-center" >
+           <div class="col-md-6 col-12  ">
+               <div class="row g-0 my-3 justify-content-center align-items-center " >
                    <div class="col-12 w-25 text-center">
                        <i class="fa-solid fa-house-chimney-medical"></i>
                    </div>  
@@ -13,7 +13,8 @@
                <div class="content w-75 m-auto text-center">
                    <div >
                    <h1>Welcome in Happy Clinic</h1>    
-                  <p class="my-3 text-secondary ">Enter Details to create an acount</p>
+                  <p class="my-3 text-secondary ">Need an account?</p>
+                <a  class="nav-link" [routerLink]="['/register']" >Sign Up</a>
                    <form [formGroup]="signInData" (ngSubmit)="SignInAction()">
                       
                       <div class="input-group flex-wrap my-3">

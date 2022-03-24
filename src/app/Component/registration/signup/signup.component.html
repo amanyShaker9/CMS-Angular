@@ -50,7 +50,7 @@
                     <small   *ngIf="signUpData.get('ConfirmuserPassword')?.value != signUpData.get('userPassword')?.value && signUpData.get('ConfirmuserPassword')?.touched" class=" alert alert-danger w-100 my-1">Invalid,Make sure you confirm password correctly</small>
 
                 </div>
-                   <p class="my-3 text-secondary ">Already Registered?<a routerLink="/signIN">Login</a></p>
+                   <p class="my-3 text-secondary ">Already Registered?<a  class="nav-link" [routerLink]="['/login']" >Login</a></p>
 
                    <button [disabled]="signUpData.status =='INVALID'" value="Register" class="btn btn-primary my-3 w-100 border border-1 text-bolder ">Register</button>
                 </form>

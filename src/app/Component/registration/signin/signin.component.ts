@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -9,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(public _AuthService:AuthService) { }
+  constructor(public _AuthService:AuthService,public _Router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,19 @@ export class SigninComponent implements OnInit {
    SignInAction(){
     this._AuthService.signIn(this.signInData.value).subscribe({
       next:(result)=>{
-         console.log(result);
+         if(result.message=="doctorlogin"){
+          //  this._Router.navigate('/doctor');
+           console.log("Hi doctor")
+         }else if(result.message=="adminlogin"){
+          // this._Router.navigate('/admin');
+           console.log("Hi admin")
+         }else if(result.message=="patientlogin"){
+          // this._Router.navigate('/patient');
+           console.log("hi patient")
+         }
+        },
+      error:(e)=>{
+          console.log("Ivalid Login ")
       }
     })
    }
