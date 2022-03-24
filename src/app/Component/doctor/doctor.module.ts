@@ -7,7 +7,13 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
 import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
 
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
-
+import { RouterModule, Routes } from '@angular/router';
+const routes:Routes=[
+  {path:"",component: DoctorListComponent },
+  {path:"edit",component:EditDoctorComponent},
+  {path:"add",component:AddDoctorComponent},
+  {path:"profile/:id",component:DoctorProfileComponent},
+]
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
     DoctorHomeComponent
   ],
   imports: [
-    CommonModule
+  
+    CommonModule,RouterModule.forChild(routes)
   ],
   exports:[
 
