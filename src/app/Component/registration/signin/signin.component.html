@@ -1,0 +1,47 @@
+<section>
+    <div class="row g-0 ">
+        <div class="customApp col-md-6">
+            <img  src="../../../assets/signup.png"/>
+           </div>
+           <div class="col-md-6 col-12  ">
+               <div class="row g-0 my-3 justify-content-center align-items-center " >
+                   <div class="col-12 w-25 text-center">
+                       <i class="fa-solid fa-house-chimney-medical"></i>
+                   </div>  
+               </div>
+               <div class="row g-0 ">
+               <div class="content w-75 m-auto text-center">
+                   <div >
+                   <h1>Welcome in Happy Clinic</h1>    
+                  <p class="my-3 text-secondary ">Need an account?</p>
+                <a  class="nav-link" [routerLink]="['/register']" >Sign Up</a>
+                   <form [formGroup]="signInData" (ngSubmit)="SignInAction()">
+                      
+                      <div class="input-group flex-wrap my-3">
+                          <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-envelope"></i></span>
+                          <input  [class.is-valid]="signInData.get('userEmail')?.status=='VALID' "  formControlName="userEmail" type="email" class="form-control  " placeholder="User Email" name="userEmail" aria-describedby="addon-wrapping"/>
+                          <small  *ngIf="signInData.get('userEmail')?.errors && signInData.get('userEmail')?.touched" class=" alert alert-danger w-100 my-1 ">Invaild Email</small>
+   
+                      </div>
+                      
+                      <div class="input-group flex-wrap my-3">
+                          <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-key"></i></span>
+                          <input   [class.is-valid]="signInData.get('userPassword')?.status=='VALID' "  formControlName="userPassword"  type="password" class="form-control " placeholder="user Password" name="userPassword"  aria-describedby="addon-wrapping"/>
+                          <small  *ngIf="signInData.get('userPassword')?.errors && signInData.get('userPassword')?.touched" class=" alert alert-danger w-100 my-1">Invalid Passsword,password must contain 8 combination from number and Alphabitic</small>
+   
+                      </div>
+                    
+   
+                      <button [disabled]="signInData.status =='INVALID'" value="Register" class="btn btn-primary my-3 w-100 border border-1 text-bolder ">Login</button>
+                   </form>
+               </div>
+              
+               
+          </div>
+       </div>
+      </div>
+        </div>
+        
+  
+       
+</section>
