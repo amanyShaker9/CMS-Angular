@@ -11,19 +11,28 @@ import { DectorService } from 'src/app/Services/dector.service';
 export class AddDoctorComponent implements OnInit {
 
   constructor(public doctoser: DectorService,public router:Router ) { }
-  newDoctor:Doctor=new Doctor(0,'','',0,0,'','','','',new Date(2020/11/11),{},'','','');
+
+  checkPass=false;
+  newDoctor:Doctor=new Doctor(0,'','',0,0,'','','','',new Date(2020/11/11),{city:"",street:""},'','','');
   ngOnInit(): void {
   }
-  add(){
-       this.doctoser.addDoctor(this.newDoctor).subscribe(
-         
+  add(con:string){
+    console.log(con);
+    console.log(this.newDoctor.password)
+    if(con==this.newDoctor.password){
+      this.doctoser.addDoctor(this.newDoctor).subscribe(
+
         {
-     
+
           next:a=>{console.log(a),this.newDoctor=a}
-       
+
         });
-     
-       this.router.navigate(['/Doctor']);
+        this.checkPass=false;
+         this.router.navigate(['/Doctor']);
+    }else{
+      this.checkPass=true;
+    }
+
   }
 
 }

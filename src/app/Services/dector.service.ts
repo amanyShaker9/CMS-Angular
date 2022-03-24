@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 export class DectorService {
 
   doctorId:number=1;
+ 
   private baseUrl:string="http://localhost:8080/Doctor"
   getDoctors(){
       return this.http.get<Doctor[]>(this.baseUrl);
@@ -16,15 +17,18 @@ export class DectorService {
     return this.http.get<Doctor>(this.baseUrl+"/"+id);
 }
   addDoctor(d:Doctor){
-    return this.http.post<Doctor>(this.baseUrl,d)
+    console.log(d);
+    return this.http.post<Doctor>(this.baseUrl+"/post",d)
   }
-  updateDoctor(d:Doctor){
-    return this.http.put<Doctor>(this.baseUrl,d);
+  updateDoctor(d:Doctor,id:number){
+    return this.http.put<Doctor>(this.baseUrl+"/edit/"+id,d);
   }
   deleteDoctor(id:number){
-    return this.http.delete(this.baseUrl+"/"+id);
+    console.log("rout "+id);
+
+    return this.http.delete(this.baseUrl+"/delete"+"/"+id);
   }
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient) {
 
   }
 }

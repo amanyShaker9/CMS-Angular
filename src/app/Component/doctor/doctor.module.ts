@@ -8,9 +8,12 @@ import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
 
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 const routes:Routes=[
   {path:"",component: DoctorListComponent },
-  {path:"edit",component:EditDoctorComponent},
+  {path:"list",component: DoctorListComponent },
+  
+  {path:"edit/:id",component:EditDoctorComponent},
   {path:"add",component:AddDoctorComponent},
   {path:"profile/:id",component:DoctorProfileComponent},
 ]
@@ -25,12 +28,13 @@ const routes:Routes=[
 
     DoctorHomeComponent
   ],
+
   imports: [
-  
-    CommonModule,RouterModule.forChild(routes)
+
+    CommonModule,FormsModule,RouterModule.forChild(routes)
   ],
   exports:[
-
+    AddDoctorComponent,
     DoctorHomeComponent,
 
   ]

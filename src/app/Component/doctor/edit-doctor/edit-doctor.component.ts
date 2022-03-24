@@ -9,27 +9,44 @@ import { DectorService } from 'src/app/Services/dector.service';
   styleUrls: ['./edit-doctor.component.scss']
 })
 export class EditDoctorComponent implements OnInit {
-  newDoctor:Doctor=new Doctor(0,'','',0,0,'','','','',new Date(2020/11/11),{},'','','');
+  checkPass=false;
+  id:number=this.doctoser.doctorId;
+
+  newDoctor:Doctor=new Doctor(0,'','',0,0,'','','','',new Date(2020/11/11),{city:"",street:""},'','','');
   constructor( public doctoser: DectorService,public router:Router ) { }
 
   ngOnInit(): void {
-    this.newDoctor._id=this.doctoser.doctorId;
+    console.log(this.id);
+    this.newDoctor._id= this.id;
+    this.doctoser.getDoctorById(this.newDoctor._id).subscribe(
+
+      {
+  
+        next:a=>{this.newDoctor=a}
+  
+  
+      });
   }
 
-  delete(id:number){
-    this.doctoser.deleteDoctor(id);
 
-  }
 
-add(){
+add(con:string){
 
-  this.doctoser.updateDoctor(this.newDoctor).subscribe(
-         
+  if(con==this.newDoctor.password){
+    this.doctoser.updateDoctor(this.newDoctor,this.doctoser.doctorId).subscribe(
+
     {
- 
+
       next:a=>{console.log(a),this.newDoctor=a}
-   
+
+
     });
- 
-   this.router.navigate(['/Doctor']);
+    this.checkPass=false;
+    this.router.navigate(['/Doctor']);
+ }else{
+   this.checkPass=true;
+ }
+
+
+
 }}
