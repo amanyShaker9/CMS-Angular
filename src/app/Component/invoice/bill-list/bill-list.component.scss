@@ -21,15 +21,7 @@ img{
     height: 60px;
     border-radius: 50%;
 }
-button{
-    width: 80px;
-    height: 35px;
-	border-radius: 30px;
-    font-size: 14px;
-}
-button:hover{
-	color: #fff;
-}
+
 .header{
 	display: flex;
 	justify-content: space-between;
@@ -186,5 +178,7 @@ h1, h2, h3, h4, h5,
 label{
 	font-size: xx-large;
 }
-
+#h{
+	color: $white;
+}
 
