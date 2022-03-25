@@ -15,7 +15,7 @@ import { PrescriptionListComponent } from './Component/prescription/prescription
 
 
 
-import{HttpClientModule} from '@angular/common/http';
+
 
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
@@ -48,7 +48,7 @@ const routes:Routes=[
     CoreModule,
 
     InvoiceModule,
-    NgbPaginationModule, NgbAlertModule
+    NgbPaginationModule, NgbAlertModule,
 
     NgbPaginationModule,
     NgbAlertModule,
