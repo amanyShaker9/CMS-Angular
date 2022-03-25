@@ -11,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 const routes:Routes=[
 
-  {path:"",redirectTo:"/doctor/list",pathMatch:"full" },
+  {path:"",component:DoctorHomeComponent},
   {path:"list",component: DoctorListComponent,pathMatch:"full" },
 
 
