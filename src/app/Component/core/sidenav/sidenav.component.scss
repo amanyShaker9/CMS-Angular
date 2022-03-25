@@ -1,0 +1,15 @@
+.content{
+    height: 100vh !important;
+    box-shadow: 3px 3px 10px #ccc;
+}
+.home{
+    background-color: #12aada !important;
+}
+.home:hover{
+    color: #fff !important;
+}
+a:hover{
+    color: #12aada !important;
+    transition: 0.3s ease-in-out;
+    
+}

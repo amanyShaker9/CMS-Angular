@@ -1,0 +1,65 @@
+<section>
+    <div class="row g-0 ">
+        <div class="customApp col-md-6 ">
+         <img src="../../../assets/signup.png"/>
+        </div>
+        <div class="col-md-6 col-12 row align-items-center ">
+            <div class="row g-0 my-3 justify-content-center align-items-center" >
+                <div class="col-12 w-25 text-center">
+                    <i class="fa-solid fa-house-chimney-medical"></i>
+                </div>  
+            </div>
+            <div class="row g-0 ">
+            <div class="content w-75 m-auto text-center ">
+                <div >
+                <h1>Welcome in Happy Clinic</h1>    
+               <h2>Sign up</h2>
+               <p class="my-3 text-secondary ">Enter Details to create an acount</p>
+                <form [formGroup]="signUpData" (ngSubmit)="SignUpAction()">
+                   <div class="input-group flex-wrap my-3 ">
+                       <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
+                       <input [class.is-valid]="signUpData.get('userName')?.status=='VALID' " formControlName="userName" type="text" class="form-control names " placeholder="User Name" name="userName" aria-describedby="addon-wrapping"/>
+                       <small *ngIf="signUpData.get('userName')?.errors && signUpData.get('userName')?.touched" class="alert alert-danger w-100 my-1 "> Invalid userName</small>
+
+                   </div>
+                  
+                   <div class="input-group flex-wrap my-3">
+                       <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-envelope"></i></span>
+                       <input  [class.is-valid]="signUpData.get('userEmail')?.status=='VALID' "  formControlName="userEmail" type="email" class="form-control  " placeholder="User Email" name="userEmail" aria-describedby="addon-wrapping"/>
+                       <small  *ngIf="signUpData.get('userEmail')?.errors && signUpData.get('userEmail')?.touched" class=" alert alert-danger w-100 my-1 ">Invaild Email</small>
+
+                   </div>
+                   
+                   <div class="input-group flex-wrap my-3">
+                       <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-key"></i></span>
+                       <input   [class.is-valid]="signUpData.get('userPassword')?.status=='VALID' "  formControlName="userPassword"  type="password" class="form-control " placeholder="user Password" name="userPassword"  aria-describedby="addon-wrapping"/>
+                       <small  *ngIf="signUpData.get('userPassword')?.errors && signUpData.get('userPassword')?.touched" class=" alert alert-danger w-100 my-1">Invalid Passsword,password must contain 8 combination from number and Alphabitic</small>
+
+                   </div>
+                   <div class="input-group flex-wrap my-3">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-key"></i></span>
+                    <input [class.is-valid]="signUpData.get('ConfirmuserPassword')?.status=='VALID'"  formControlName="ConfirmuserPassword"  type="password" class="form-control " placeholder=" Confirm user Password" name="userPassword"  aria-describedby="addon-wrapping"/>
+                    <small   *ngIf="signUpData.get('ConfirmuserPassword')?.value != signUpData.get('userPassword')?.value && signUpData.get('ConfirmuserPassword')?.touched" class=" alert alert-danger w-100 my-1">Invalid,Make sure you confirm password correctly</small>
+
+                </div>
+                <div class="input-group flex-wrap my-3">
+                    <select   formControlName="userType"  type="password" class="form-control form-select " placeholder="userType"  name="userType"  aria-describedby="addon-wrapping">
+                        <option selected value="doctor" >Doctor</option>
+                        <option value="patient">Patient</option>
+                    </select>
+                    <small   *ngIf="signUpData.get('ConfirmuserPassword')?.value != signUpData.get('userPassword')?.value && signUpData.get('ConfirmuserPassword')?.touched" class=" alert alert-danger w-100 my-1">Invalid,Make sure you confirm password correctly</small>
+
+                </div>
+                   <p class="my-3 text-secondary ">Already Registered?<a  class="nav-link" [routerLink]="['/login']" >Login</a></p>
+
+                   <button [disabled]="signUpData.status =='INVALID'" value="Register" class="btn btn-primary my-3 w-100 border border-1 text-bolder ">Register</button>
+                </form>
+            </div>
+           
+            
+       </div>
+       </div>
+   </div>
+    </div>
+       
+</section>
