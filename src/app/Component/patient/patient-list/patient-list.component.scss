@@ -6,15 +6,11 @@ $black:#000;
 $white:#fff;
 $danger:red;
 
-.content{
-    display: flex;
-}
 .ftco-section{
     margin: 0 auto !important;
 }  
 .container{
-    margin-top: 0 !important;
-
+    margin-top: 0 !important;   
 }
 img{
     width: 60px;
@@ -34,7 +30,7 @@ button:hover{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	
 	//border: 1px solid #000;
 	width: 100%;
 	margin: auto;
@@ -46,21 +42,30 @@ button:hover{
 }
 
 .container{
-
+	
 	padding: 0;
-
-
+	
+	
 }
 
 .input-group{
     position: relative;
 	margin-bottom: 20px;
-	width: 80%;
+	width: 85%;  
 }
 .input-group input{
     border-radius: 5px;
 }
-
+.btn-primary{
+	background-color: #12aada !important;
+	border-color: #12aada;
+	color: #fff;
+	width: 100px;
+    height: 50px;
+	border-radius: 5px;
+    font-size: 16px;
+	margin-bottom: 20px;
+}
 .btn-outline-info{
 	border-color: #12aada;
 	color: #12aada;
@@ -74,7 +79,7 @@ button:hover{
 	color: #0da7a2;
 }
 .btn-outline-success:hover{
-	background-color: #0da7a2;
+	background-color: #0da7a2;	
 }
 .btn-outline-danger:hover{
 	background-color: #d74654;
@@ -111,6 +116,7 @@ h1, h2, h3, h4, h5,
 
 .ftco-section{
 	padding: 5em 0;
+	margin-top: 0 !important;
 }
 
 .ftco-no-pt{
@@ -136,11 +142,11 @@ h1, h2, h3, h4, h5,
 .table{
 	min-width: 1000px !important;
 	width: 100%;
-
+	
 	-webkit-box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
 	-moz-box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
 	box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
-
+    
 	thead{
 		th{
 			border: none;
@@ -148,17 +154,17 @@ h1, h2, h3, h4, h5,
 			font-size: 14px;
 			font-weight: 500;
 			color: lighten($black,50%);
-
+			
 		}
 		tr{
 			background: $white;
 			border-bottom: 4px solid darken(#f8f9fd,3%);
 			background-color: #f8f9fa !important;
-
+			
 		}
 	}
 	tbody{
-
+		
 		tr{
 			margin-bottom: 10px;
 			border-bottom: 4px solid #f8f9fd;
@@ -182,10 +188,4 @@ h1, h2, h3, h4, h5,
 		}
 	}
 }
-
-
-label{
-	font-size: xx-large;
-}
-
 

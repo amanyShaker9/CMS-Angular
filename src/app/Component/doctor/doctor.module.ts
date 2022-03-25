@@ -10,12 +10,14 @@ import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 const routes:Routes=[
-  {path:"",component: DoctorListComponent },
-  {path:"list",component: DoctorListComponent },
-  
-  {path:"edit/:id",component:EditDoctorComponent},
+
+  {path:"",redirectTo:"/doctor/list",pathMatch:"full" },
+  {path:"list",component: DoctorListComponent,pathMatch:"full" },
+
+
+  {path:"edit/:id",component:EditDoctorComponent,pathMatch:"full"},
   {path:"add",component:AddDoctorComponent},
-  {path:"profile/:id",component:DoctorProfileComponent},
+  {path:"profile/:id",component:DoctorProfileComponent,pathMatch:"full"},
 ]
 
 @NgModule({
@@ -30,6 +32,7 @@ const routes:Routes=[
   ],
 
   imports: [
+
 
     CommonModule,FormsModule,RouterModule.forChild(routes)
   ],

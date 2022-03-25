@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './Component/core/core.module';
+
+
 import { InvoiceModule } from './Component/invoice/invoice.module';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,13 +37,14 @@ const routes:Routes=[
   declarations: [
     AppComponent,
     PrescriptionListComponent
-    
+
   ],
   imports: [
 
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
@@ -50,14 +53,12 @@ const routes:Routes=[
     InvoiceModule,
     NgbPaginationModule, NgbAlertModule,
 
-    NgbPaginationModule,
-    NgbAlertModule,
     DoctorModule,
     HttpClientModule
 
   ],
   providers: [
-  
+
   ],
   bootstrap: [AppComponent]
 })
