@@ -36,6 +36,10 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
+<<<<<<< HEAD
+=======
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+>>>>>>> 14fba9da0463390cdf532703cb9a126001175dcd
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
@@ -108,7 +112,12 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css", 
+<<<<<<< HEAD
               "node_modules/font-awesome/css/font-awesome.min.css",         
+=======
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",        
+>>>>>>> 14fba9da0463390cdf532703cb9a126001175dcd
               "src/styles.scss"
             ],
             "scripts": [

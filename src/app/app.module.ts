@@ -7,9 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './Component/core/core.module';
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
-import{HttpClientModule} from '@angular/common/http';
+
+import { InvoiceModule } from './Component/invoice/invoice.module';
+import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+import { PrescriptionListComponent } from './Component/prescription/prescription-list/prescription-list.component';
+
+
+
+
 
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
@@ -27,7 +35,9 @@ const routes:Routes=[
 ]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PrescriptionListComponent
+
   ],
   imports: [
 
@@ -35,12 +45,22 @@ const routes:Routes=[
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    NgbPaginationModule,
-    NgbAlertModule,
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+    CoreModule,
+
+    InvoiceModule,
+    NgbPaginationModule, NgbAlertModule,
+
+
     DoctorModule,
     HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
