@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteDoctorComponent } from './delete-doctor.component';
+import { DoctorDatailsComponent } from './doctor-datails.component';
 
-describe('DeleteDoctorComponent', () => {
-  let component: DeleteDoctorComponent;
-  let fixture: ComponentFixture<DeleteDoctorComponent>;
+describe('DoctorDatailsComponent', () => {
+  let component: DoctorDatailsComponent;
+  let fixture: ComponentFixture<DoctorDatailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteDoctorComponent ]
+      declarations: [ DoctorDatailsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteDoctorComponent);
+    fixture = TestBed.createComponent(DoctorDatailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

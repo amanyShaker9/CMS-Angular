@@ -1,0 +1,66 @@
+<section class="ftco-section">
+    <!--===========================-->
+    <div class="header ">
+      <div class="input-group ">
+        <input type="text" class="form-control bg-light border-0 p-3" placeholder="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+      </div>
+      <div>
+        <button class="nav-link"  routerLink="/patient/add" routerLinkActive="active" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+    <!--===========================-->
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap shadow-lg">
+                    <table class="table table-responsive-xl">
+                      <thead>
+                        <tr>                           
+                           <th>Id</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Operations</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="alert" role="alert" *ngFor="let item of patients">
+                          <td>{{item._id}}</td>
+                          <td>{{item.firstName}}</td>
+                          <td>{{item.lastName}}</td>
+                          <td>{{item.gender}}</td>
+                          <td>{{item.phone}}</td>
+                          <td>
+                            {{item.address.street}} -
+                            {{item.address.city}} -
+                            {{item.address.country}}
+
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-info" [routerLink]="['/patient/details/',item._id]">Details</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-success" [routerLink]="['/patient/edit/',item._id]">Update</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteById(item._id)">Delete</button>
+                          </td>
+                          <td>
+
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

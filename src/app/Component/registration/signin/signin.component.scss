@@ -1,0 +1,22 @@
+section img{
+    height:100vh;
+    width:100%
+     
+ }
+section .content{
+     flex-direction: column;
+ }
+
+ section .content a{
+     text-decoration: none;
+     
+ }
+ .fa-house-chimney-medical{
+     color:tomato;
+     font-size: 70px;
+ }
+ @media (max-width:767px){
+.customApp{
+    display:none;
+}
+ }

@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="header">
+        <h1>Patient Details</h1>
+    </div>
+    <div class="row">
+        <div class="alert alert-primary">
+            <h1 class="p-3">
+             Id :: {{data._id}}<br/>
+             FirstName :: {{data.firstName}}<br/>
+             LastName :: {{data.lastName}}<br/>
+             Gender :: {{data.gender}}<br/>
+             Phone :: {{data.phone}}<br/>
+             Address :: {{data.address.street}} - {{data.address.city}} - {{data.address.country}}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" (click)="goBack()">Go To List</button>
+    </div>
+</div>
+

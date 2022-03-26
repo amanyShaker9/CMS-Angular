@@ -1,0 +1,122 @@
+<div class="container ">
+    <div class="row">
+
+        <div class="col-md-12">
+          <div class="table-wrap shadow-lg">
+            <h1 id="h">All Prescriptions</h1>
+            <button id="add" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal"(click)= "clickAddPrescription()"><i class="bi bi-plus-circle"></i></button>
+          </div>
+            <div class="table-wrap shadow-lg">
+                <table class="table table-responsive-xl">
+                  <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Admission Id</th>
+                        <th>Doctor Name</th>
+                        <th>Statues</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="alert" role="alert"  *ngFor="let item of billArray">
+                      <td>{{item.admission_id}}</td>
+                      <td>{{item.admit_date}}</td>
+                      <td >{{item.totalPrice}}</td>
+                      <td>{{item.paymentMethod}}</td>
+                      <td>{{item.paymentStatus}}</td>
+                      <td>
+                        <button id="update" class="btn btn-link"  (click)="editItem(item)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
+                        <button id ="delete" class="btn btn-link" (click)="removeItem(item)"><i class="bi bi-trash"></i></button>
+                      </td>
+                    </tr>
+
+
+
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+
+          <div class="mb-3">
+            <label for="exampleInputPid" class="form-label">Bill Id</label>
+            <input type="text" class="form-control" id="exampleInputPid" formControlName="billID">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPname" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="exampleInputPname" formControlName="patientName">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputADid" class="form-label">Admision Id</label>
+            <input type="text" class="form-control" id="exampleInputADid" formControlName="admissionID">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputDn" class="form-label">Doctor Name</label>
+            <!-- <input type="text" class="form-control" id="exampleInputDn" formControlName="doctorName"> -->
+            <div class="form-floating">
+              <select [(ngModel)]="doctorId" class="form-select" id="floatingSelect"  aria-label="Floating label select example" formControlName="payMethod">
+                <option class="op" *ngFor="let item of doctorArray" selected value={{item._id}}>{{item.firstName}}</option>
+
+              </select>
+            </div>
+
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputdate" class="form-label">Admit Date</label>
+            <input type="date" class="form-control" id="exampleInputdate"formControlName="date">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPrice" class="form-label">Total Price</label>
+            <input type="text" class="form-control" id="exampleInputPrice" formControlName="price">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">payment Method</label>
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="payMethod">
+                <option selected> </option>
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Insurance">Insurance</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">payment Statues</label>
+            <div class="form-floating">
+              <select class="form-select" id="Select" aria-label="Floating label select example" formControlName="payState">
+                <option selected> </option>
+                <option value="Paid">Paid</option>
+                <option value="Unpaid">Unpaid</option>
+                <option value="Partial">Partial</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="cancle" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button *ngIf ="showAdd" type="button" class="btn btn-primary" (click)="postData()">Add</button>
+        <button *ngIf ="showUpdate" type="button" class="btn btn-primary" (click)="updateData()">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

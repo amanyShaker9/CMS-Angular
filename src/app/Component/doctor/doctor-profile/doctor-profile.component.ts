@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DectorService } from 'src/app/Services/dector.service';
 
 @Component({
   selector: 'app-doctor-profile',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public doctoser: DectorService ) { }
 
   ngOnInit(): void {
   }
