@@ -11,14 +11,14 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 
 
 
-// const routes:Routes=[
-// {path:"",redirectTo:"/patient",pathMatch:"full"},
-// {path:'patient',component:PatientListComponent},
-// {path:'patient/add',component:AddPatientComponent,pathMatch:"full"},
-// {path:'patient/details/:id',component:PatientDetailsComponent,pathMatch:"full"},
-// {path:'patient/edit/:id',component:EditPatientComponent,pathMatch:"full"},
+const routes:Routes=[
+{path:"",redirectTo:"/patient",pathMatch:"full"},
+{path:'patient',component:PatientListComponent},
+{path:'patient/add',component:AddPatientComponent,pathMatch:"full"},
+{path:'patient/details/:id',component:PatientDetailsComponent,pathMatch:"full"},
+{path:'patient/edit/:id',component:EditPatientComponent,pathMatch:"full"},
 
-// ]
+]
 @NgModule({
   declarations: [
     PatientListComponent,

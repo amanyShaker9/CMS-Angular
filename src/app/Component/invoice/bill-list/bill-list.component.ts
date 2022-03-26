@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Bill} from '../../../Model/bill';
 import {Doctor} from '../../../Model/doctor';
 import {InvoiceService} from '../../../Services/invoice.service';
-import {DoctorService} from '../../../Services/doctor.service';
+import { DectorService} from '../../../Services/dector.service';
 import { FormBuilder,FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-bill-list',
@@ -14,7 +14,7 @@ export class BillListComponent implements OnInit {
   showAdd !:boolean;
   showUpdate !:boolean;
   billobj: Bill=new Bill();
-  constructor(public invServ:InvoiceService,private formBuilder:FormBuilder,public docserve:DoctorService) { }
+  constructor(public invServ:InvoiceService,private formBuilder:FormBuilder,public docserve: DectorService) { }
    billArray:Bill[]=[];
    doctorArray:Doctor[]=[];
    doctorId:number=0;
@@ -61,7 +61,7 @@ postData(){
   this.billobj.admit_date=this.formValue.value.date;
   this.invServ.addBill(this.billobj).subscribe(res=>{
     console.log(res);
-    alert("prescription added"); 
+    alert("prescription added");
     let ref=document.getElementById("cancle");
     ref?.click();
     this.formValue.reset();
@@ -72,7 +72,7 @@ postData(){
     alert("wrong");
   }
   );
- 
+
 }
 
 
@@ -90,7 +90,7 @@ this.showAdd=false;
 }
 
 updateData(){
-  
+
   this.billobj.bill_id=this.formValue.value.billID;
   this.billobj.patient_id=this.formValue.value.patientName;
   this.billobj.doctor_id=this.formValue.value.doctorName;
@@ -117,7 +117,7 @@ this.allBill();
       this.allBill();
     })
    }
-  
+
 
 clickAddPrescription(){
   this.formValue.reset();

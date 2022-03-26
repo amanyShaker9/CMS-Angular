@@ -23,8 +23,11 @@ import { RegistrationModule } from './Component/registration/registration.module
 import { AppointmentModule } from './Component/appointment/appointment.module';
 import { RouterModule, Routes } from '@angular/router';
 import { DoctorModule} from './Component/doctor/doctor.module';
+import{ClientServiceModule}from './Component/client-service/clientServise.module'
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
+
+
 const routes:Routes=[
   // {path:'',redirectTo:'signUp',pathMatch:"full"},
   {path:'register',component:SignupComponent,pathMatch:"full"},
@@ -36,7 +39,10 @@ const routes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+
+
+
 
   ],
   imports: [
@@ -55,7 +61,8 @@ const routes:Routes=[
 
 
     DoctorModule,
-    HttpClientModule
+    HttpClientModule,
+    ClientServiceModule
 
   ],
   providers: [

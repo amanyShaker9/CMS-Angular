@@ -1,6 +1,6 @@
 <div class="container ">
     <div class="row">
-      
+
         <div class="col-md-12">
           <div class="table-wrap shadow-lg">
             <h1 id="h">All Prescriptions</h1>
@@ -30,8 +30,8 @@
                         <button id ="delete" class="btn btn-link" (click)="removeItem(item)"><i class="bi bi-trash"></i></button>
                       </td>
                     </tr>
-                  
-                  
+
+
 
                   </tbody>
                 </table>
@@ -52,15 +52,16 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="formValue">
+
           <div class="mb-3">
             <label for="exampleInputPid" class="form-label">Bill Id</label>
             <input type="text" class="form-control" id="exampleInputPid" formControlName="billID">
-           
+
           </div>
           <div class="mb-3">
             <label for="exampleInputPname" class="form-label">Patient Name</label>
             <input type="text" class="form-control" id="exampleInputPname" formControlName="patientName">
-           
+
           </div>
           <div class="mb-3">
             <label for="exampleInputADid" class="form-label">Admision Id</label>
@@ -70,9 +71,9 @@
             <label for="exampleInputDn" class="form-label">Doctor Name</label>
             <!-- <input type="text" class="form-control" id="exampleInputDn" formControlName="doctorName"> -->
             <div class="form-floating">
-              <select [(ngModel)]="doctorId" class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="payMethod">
+              <select [(ngModel)]="doctorId" class="form-select" id="floatingSelect"  aria-label="Floating label select example" formControlName="payMethod">
                 <option class="op" *ngFor="let item of doctorArray" selected value={{item._id}}>{{item.firstName}}</option>
-               
+
               </select>
             </div>
 
@@ -96,7 +97,7 @@
                 <option value="Insurance">Insurance</option>
               </select>
             </div>
-         
+
           </div>
           <div class="mb-3">
             <label  class="form-label">payment Statues</label>

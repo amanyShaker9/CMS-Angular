@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-import { Doctor} from 'src/app/Model/doctor';
-import { DectorService } from 'src/app/Services/dector.service';
-import { ThisReceiver } from '@angular/compiler';
-
+import {Client_service} from 'src/app/Model/client-srvice';
+import {ClientServiceService} from 'src/app/Services/client-service.service';
 @Component({
-  selector: 'app-doctor-list',
-  templateUrl: './doctor-list.component.html',
-  styleUrls: ['./doctor-list.component.scss']
+  selector: 'app-list-client-service',
+  templateUrl: './list-client-service.component.html',
+  styleUrls: ['./list-client-service.component.scss']
 })
-export class DoctorListComponent implements OnInit {
-  doctors:Doctor[]=[];
-
-  constructor(public doctoser: DectorService ,public router:Router) { }
+export class ListClientServiceComponent implements OnInit {
+  Client_services:Client_service[]=[];
+  constructor(public cservices: ClientServiceService,public router:Router) { }
 
   ngOnInit(): void {
-   this.addDoctor();
+        this.addClient_service();
   }
-  addDoctor(){
+  addClient_service(){
 
-    this.doctoser.getDoctors().subscribe({
+    this.cservices.getClient_services().subscribe({
 
-      next:a=>{this.doctors=a}
+      next:a=>{this.Client_services=a}
 
     // next:a=>{console.log(a)}
     });
@@ -43,14 +40,14 @@ export class DoctorListComponent implements OnInit {
       text: "You wont to delete this item!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          ' item has been deleted.',
           'success'
         )
       } else if (
@@ -59,19 +56,21 @@ export class DoctorListComponent implements OnInit {
       ) {
         swalWithBootstrapButtons.fire(
           'Cancelled',
-          'Your imaginary file is safe :)',
+          ' item not deleted',
           'error'
         )
       }
     })
     console.log(swalWithBootstrapButtons);
-    this.doctoser.deleteDoctor(id).subscribe({next:a=>{console.log(a)}});
-    this.addDoctor();
+    this.cservices.deleteClient_service(id).subscribe({next:a=>{console.log(a)}});
+    this.addClient_service();
 
   }
   sendId(id:number){
-    this.doctoser.doctorId=id;
+    this.cservices.Client_serviceId=id;
   }
+
+
 
 
 }
