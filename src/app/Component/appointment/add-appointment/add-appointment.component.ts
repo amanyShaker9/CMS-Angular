@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppointmentService } from '../appointment.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-add-appointment',
@@ -10,7 +12,7 @@ import { AppointmentService } from '../appointment.service';
 export class AddAppointmentComponent implements OnInit {
 
 
-  constructor(public _AppointmentService:AppointmentService) { }
+  constructor(public _AppointmentService:AppointmentService ,private datePipe: DatePipe) { }
   allDoctors:any=[];
   allDoctorAppointment:any=[];
 
@@ -51,13 +53,11 @@ export class AddAppointmentComponent implements OnInit {
   });
 
    add(){
-    // i call this function to know the new data Added
-    // this.allAppointment();
     this._AppointmentService.getDoctorAppointment().subscribe({
       next:(data)=>{
         this.allDoctorAppointment=data;
       }
-    })
+    });
     //testing.................
     console.log(this.bookAppointment);
     console.log( this.allDoctorAppointment);
@@ -69,10 +69,10 @@ export class AddAppointmentComponent implements OnInit {
     
     //------------------------------------
   if(this.allDoctorAppointment.length !=0){
-    debugger;
+    
      for(let i=0; i<this.allDoctorAppointment.length;i++){
        if(this.bookAppointment.value.DoctorName==this.allDoctorAppointment[i].doctorName &&
-        this.bookAppointment.value.AppointmentDate==this.allDoctorAppointment[i].appointmentDate  &&
+        this.bookAppointment.value.AppointmentDate== this.datePipe.transform(this.allDoctorAppointment[i].appointmentDate,'yyyy-MM-dd')  &&
         this.bookAppointment.value.AppointmentTime==this.allDoctorAppointment[i].appointmentTime
         ){
 
@@ -81,12 +81,11 @@ export class AddAppointmentComponent implements OnInit {
      else{
       let newDoctorAppointment={
         DoctorName:this.bookAppointment.value.DoctorName,
-        AappointmentDate: this.bookAppointment.value.AppointmentDate,
+        AppointmentDate: this.bookAppointment.value.AppointmentDate,
         AppointmentTime:this.bookAppointment.value.AppointmentTime
        }
       this._AppointmentService.bookAppointment(this.bookAppointment.value).subscribe({
         next:(data)=>{
-          
           console.log("Appointment"+data.message);
         },
         
@@ -95,7 +94,8 @@ export class AddAppointmentComponent implements OnInit {
         next:(data)=>{
           console.log("Doctor Appointment"+data.message)
         }
-      })
+      });
+     
      } // if end
     } // for End
   } // end first condition
@@ -109,7 +109,8 @@ export class AddAppointmentComponent implements OnInit {
      console.log(newDoctorAppointment);
      this._AppointmentService.addDoctorAppointment(newDoctorAppointment).subscribe({
       next:(data)=>{
-       console.log("Doctor Appointment"+data.message)
+       console.log("Doctor Appointment"+data.message);
+       
       }
     });
 
