@@ -24,12 +24,20 @@ import { DoctorModule} from './Component/doctor/doctor.module';
 import{ClientServiceModule}from './Component/client-service/clientServise.module'
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
-
+import { AddAppointmentComponent } from './Component/appointment/add-appointment/add-appointment.component';
+import { ViewAppointmentComponent } from './Component/appointment/view-appointment/view-appointment.component';
+import { EditAppointmentComponent } from './Component/appointment/edit-appointment/edit-appointment.component';
+import { PatientDashBoardModule } from './Component/patient-dash-board/patient-dash-board.module';
+import { DashboardComponent } from './Component/patient-dash-board/dashboard/dashboard.component';
 
 const routes:Routes=[
-  // {path:'',redirectTo:'signUp',pathMatch:"full"},
+  {path:'',redirectTo:'register',pathMatch:"full"},
   {path:'register',component:SignupComponent,pathMatch:"full"},
   {path:'login',component:SigninComponent,pathMatch:"full"},
+  {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
+  {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
+  {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"}
 
 
 
@@ -37,35 +45,22 @@ const routes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    MedicineListComponent,
-    PrescriptionListComponent
-
-
-
+    
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    NgbPaginationModule, NgbAlertModule, FormsModule, HttpClientModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    NgbModule,
-    CoreModule,
-
-    InvoiceModule,
-    NgbPaginationModule, NgbAlertModule,
-
-
-    DoctorModule,
-    HttpClientModule,
-    ClientServiceModule
-
-  ],
-  providers: [
-
+    NgbPaginationModule,
+     NgbAlertModule,
+     RegistrationModule,
+     AppointmentModule,
+     RouterModule.forRoot(routes),
+     DoctorModule,
+    PatientDashBoardModule
+    
   ],
   bootstrap: [AppComponent]
 })

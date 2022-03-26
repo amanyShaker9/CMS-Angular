@@ -1,0 +1,38 @@
+   <section class="bg-white">
+       <div class="container">
+           <div class="filter">
+
+           </div>
+           <div class="AppointmentView">
+               <table class="table table-borderless   my-5 ">
+                   <thead>
+                       <th>PatientName</th>
+                       <th> PatientEmail</th>
+                       <th>PatientMobile</th>
+                       <th>PatientGender</th>
+                       <th>appointmentDate</th>
+                       <th>appointmentTime</th>
+                       <th>doctorName</th>
+                       <th>Injury</th>
+                       <th> Action</th>   
+                      
+                   </thead>
+                   <tr  *ngFor="let appointment of  allAppointments">
+                       <td >{{appointment.PatientName}}</td>
+                       <td> {{appointment.PatientEmail}}</td>
+                       <td>{{appointment.PatientMobile}}</td>
+                       <td>{{appointment.PatientGender}}</td>
+                       <td>{{appointment.appointmentDate|date}}</td>
+                       <td>{{appointment.appointmentTime}}</td>
+                       <td>{{appointment.doctorName}}</td>
+                       <td>{{appointment.Injury}}</td>
+                       <td>
+                           <i class="fas fa-pen"></i>
+                           <i (click)="DeleteAppointment(appointment.id)" class="fas fa-book"></i>
+                       </td>                 
+                   </tr>
+
+               </table>
+           </div>
+       </div>
+   </section>
