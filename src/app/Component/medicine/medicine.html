@@ -1,0 +1,111 @@
+<div class="card border-dark">
+  <div class="head">
+  <div class="card-header">Medicine</div>
+    <input class="add" type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" value="Add Medicine"/>
+</div>
+  <div class="card-body">
+    <div class="header ">
+      <div>
+        <h1>Filter</h1>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control bg-light border-0 p-3" placeholder="search"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="table-wrap table-bordered table-hovered">
+        <table class="table table-responsive-xl table-hovered">
+          <thead>
+            <tr>
+              <th>Medicine ID</th>
+              <th>Medicine Name</th>
+              <th>Company Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Expiry Date</th>
+              <th>Stock</th>
+              <th>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of medicine">
+              <td>{{item.Med_id}}</td>
+              <td>{{item.medicineName}}</td>
+              <td>{{item.companyName}}</td>
+              <td>{{item.category}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.expiryDate}}</td>
+              <td>{{item.stock}}</td>
+              <td>
+                <!-- <button  class="btn btn-outline-info">Details</button> -->
+                <input class="btn btn-outline-success out" (click)="Update(item)" type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" value="Update"/>
+                <button class="btn btn-outline-danger" (click)="Delete(item)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------------- Add & Update Modal ------------>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Medicine Details</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+        <div class="form">
+          <div class="container">
+          <label>ID</label>
+          <input type="text" formControlName="Med_id">
+        </div>
+        <div class="container">
+          <label>Medicine Name</label>
+          <input type="text" formControlName="medicineName">
+        </div>
+          <div class="container">
+          <label>Company Name</label>
+          <input type="text" formControlName="companyName">
+        </div>
+          <div class="container">
+          <label>Category</label>
+          <input type="text" formControlName="category">
+        </div>
+          <div class="container">
+          <label>Price</label>
+          <input type="text" formControlName="price">
+        </div>
+          <div class="container">
+          <label>Expiry Date</label>
+          <input type="text" formControlName="expiryDate">
+        </div>
+          <div class="container">
+          <label>Stock</label>
+          <input type="text" formControlName="stock">
+        </div>
+          <div class="d-grid gap-2">
+            <!-- <button type="button" class=" btn btn-dark">Add</button> -->
+          </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="add" data-dismiss="modal" id="cancel">Close</button>
+        <button type="button" class="add" (click)="postMedicine()">Add</button>
+        <button type="button" class="add" (click)="updateMedicine()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
