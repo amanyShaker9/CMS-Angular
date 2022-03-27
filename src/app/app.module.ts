@@ -45,6 +45,7 @@ const routes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
+    MedicineListComponent
     
    
   ],
@@ -59,7 +60,8 @@ const routes:Routes=[
      AppointmentModule,
      RouterModule.forRoot(routes),
      DoctorModule,
-    PatientDashBoardModule
+    PatientDashBoardModule,
+    ReactiveFormsModule
     
   ],
   bootstrap: [AppComponent]

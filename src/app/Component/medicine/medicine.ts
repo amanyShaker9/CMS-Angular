@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Medicine } from 'src/app/Model/medicine';
 import { MedicineService } from 'src/app/Services/medicine.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl,FormBuilder,FormGroup} from '@angular/forms';
 
 
 @Component({
