@@ -1,0 +1,112 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+<div class="padding">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
+                            <div class="col-md-6 text-right" style="margin-top: -5px;">
+                                <img src="https://img.icons8.com/color/36/000000/visa.png">
+                                <img src="https://img.icons8.com/color/36/000000/mastercard.png">
+                                <img src="https://img.icons8.com/color/36/000000/amex.png">
+                            </div>
+                        </div>
+                    </div>
+                    <form class="container" #Register="ngForm">
+                        <div class="card-body" style="height: 350px">
+                            <div class="form-group">
+                                <label for="CardNumber" class="control-label">CARD NUMBER</label>
+                                <input name="CardNumber" CardNumber="CardNumber" [(ngModel)]="pyment.CardNumber"
+                                    type="tel" class="input-lg form-control cc-number" autocomplete="cc-number"
+                                    placeholder="•••• •••• •••• ••••" required #CardNumber="ngModel" minlength="16" 
+                                    maxlength="16" pattern="[0-9]+">
+                                <div>
+                                    <span  class="payment" *ngIf="CardNumber.errors?.['required']">Card Number is requird</span>
+                                    <span class="payment" *ngIf="CardNumber.errors?.['minlength']">Please Enter 16 Digits</span>
+                                    <span  class="payment" *ngIf="CardNumber.errors?.['maxlength']">Please Enter 16 Digits</span>
+                                    <span  class="payment" *ngIf="CardNumber.errors?.['pattern']">{{"  has to be a number" }}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exp_date" class="control-label">CARD EXPIRY</label>
+                                        <input name="exp_date" exp_date="exp_date" type="tel"
+                                            class="input-lg form-control cc-exp" autocomplete="cc-exp"
+                                            placeholder="•• / ••" [(ngModel)]="pyment.exp_date" #exp_date="ngModel"
+                                            required pattern="[^(0[1-9]|1[0-2])\/?(([0-9]{4}|[0-9]{2})$)]" >
+                                        <div>
+                                            <span class="payment" *ngIf="exp_date.errors?.['required']">Expiry Date is requird</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cardCVC" class="control-label">CARD CVC</label>
+                                        <input name="cardCVC" cardCVC="cardCVC" type="tel"
+                                            class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••"
+                                            [(ngModel)]="pyment.cardCVC" #cardCVC="ngModel" required>
+                                        <div>
+                                            <span class="payment" *ngIf="cardCVC.errors?.['required']">Card Number is requird</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="CardHolder" class="control-label">CARD HOLDER NAME</label>
+                                <input type="text" name="CardHolder" CardHolder="CardHolder" class="input-lg form-control"
+                                    [(ngModel)]="pyment.CardHolder" #CardHolder="ngModel" autocomplete="CardHolder"
+                                    required minlength="3">
+                                <div>
+                                    <span class="payment" *ngIf="CardHolder.errors?.['required']">Name is requird</span>
+                                    <span class="payment" *ngIf="CardHolder.errors?.['minlength']">Name Min Legnth is 3 Letters</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input value="MAKE PAYMENT" (click)="submit(Register)" type="submit"
+                                         data-bs-target="#exampleModal"
+                                        data-bs-toggle="modal" [disabled]="Register.invalid"
+                                    class="btn btn-success btn-lg form-control" style="font-size: .8rem;">
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reserved</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h1>Payment Successfuly Completed</h1>
+            <p>Kindly note that the amount of 200$ will not be charged until confirming your reservation. </p>
+            <p>To confirm your appointment please Call 1023.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
