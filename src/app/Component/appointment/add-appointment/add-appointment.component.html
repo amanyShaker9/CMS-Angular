@@ -1,0 +1,64 @@
+<!-- PatientName:String,
+PatientEmail:String,
+PatientMobile:String,
+PatientGender:String,
+appointmentDate:Date,
+appointmentTime:String,
+doctorName:String,
+Injury:String -->
+
+<div class="container mt-5">
+    <h1>Book Appointmet</h1>
+    <form [formGroup]="bookAppointment" (ngSubmit)="add()">
+        <div class="form-content row">
+            <div class="form-group col-lg-12  my-3">
+                <input formControlName="id" class="form-control" type="number" placeholder="Appointment ID"/>
+                <small *ngIf="bookAppointment.get('appointmentId')?.errors  && bookAppointment.get('appointmentId')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="PatientName" class="form-control" type="text" placeholder="Patient Name"/>
+                <small *ngIf="bookAppointment.get('PatientName')?.errors  && bookAppointment.get('PatientName')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="PatientEmail" class="form-control" type="email" placeholder="Patient Email"/>
+                <small *ngIf="bookAppointment.get('PatientEmail')?.errors  && bookAppointment.get('PatientEmail')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="PatientMobile" class="form-control" type="text" placeholder="Patient Mobile"/>
+                <small *ngIf="bookAppointment.get('PatientMobile')?.errors  && bookAppointment.get('PatientMobile')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <select formControlName="PatientGender" class="form-control" >
+                    <option selected value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <small *ngIf="bookAppointment.get('PatientGender')?.errors  && bookAppointment.get('PatientGender')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="AppointmentDate" class="form-control" type="date" placeholder="Appointment Date"/>
+                <small *ngIf="bookAppointment.get('AppointmentDate')?.errors  && bookAppointment.get('AppointmentDate')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="AppointmentTime" class="form-control" type="time" placeholder="Appointment time"/>
+                <small *ngIf="bookAppointment.get('AppointmentTime')?.errors  && bookAppointment.get('AppointmentTime')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+               
+                <select formControlName="DoctorName" class="form-control" >
+                    <option *ngFor="let doctor of allDoctors" [value]="doctor.firstName + doctor.lastName">
+                        {{doctor.firstName + doctor.lastName}}
+                    </option>
+                   
+                </select>
+                <small *ngIf="bookAppointment.get('DoctorName')?.errors  && bookAppointment.get('DoctorName')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <div class="form-group col-sm-12 col-lg-6 my-3">
+                <input formControlName="Injuiry" class="form-control" type="text" placeholder="Case condition"/>
+                <small *ngIf="bookAppointment.get('Injuiry')?.errors  && bookAppointment.get('Injuiry')?.touched" class="alert alert-danger d-block w-100">Required</small>
+            </div>
+            <button type="submit"  class="btn btn-info">Book </button>
+        </div>
+       
+
+    </form>
+</div>
