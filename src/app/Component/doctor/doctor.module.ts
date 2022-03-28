@@ -4,20 +4,20 @@ import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
-import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';
+
 
 import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DoctorDatailsComponent } from './doctor-datails/doctor-datails.component';
 const routes:Routes=[
+  {path:"",component: DoctorListComponent },
+  {path:"list",component: DoctorListComponent },
 
-  {path:"",redirectTo:"/doctor/list",pathMatch:"full" },
-  {path:"list",component: DoctorListComponent,pathMatch:"full" },
-
-
-  {path:"edit/:id",component:EditDoctorComponent,pathMatch:"full"},
+  {path:"edit/:id",component:EditDoctorComponent},
   {path:"add",component:AddDoctorComponent},
-  {path:"profile/:id",component:DoctorProfileComponent,pathMatch:"full"},
+  {path:"profile/:id",component:DoctorProfileComponent},
+  {path:"details/:id",component:DoctorDatailsComponent},
 ]
 
 @NgModule({
@@ -26,15 +26,16 @@ const routes:Routes=[
     EditDoctorComponent,
     DoctorListComponent,
     DoctorProfileComponent,
-    DeleteDoctorComponent,
 
-    DoctorHomeComponent
+
+    DoctorHomeComponent,
+        DoctorDatailsComponent
   ],
 
   imports: [
 
-
-    CommonModule,FormsModule,RouterModule.forChild(routes)
+    CommonModule,FormsModule,
+    RouterModule.forChild(routes)
   ],
   exports:[
     AddDoctorComponent,

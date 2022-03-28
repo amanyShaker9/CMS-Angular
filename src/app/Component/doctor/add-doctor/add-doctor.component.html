@@ -23,7 +23,7 @@
                 <div class="col-12 col-md-6">
 
                       <select id="Gender" class="form-select"  [(ngModel)]="newDoctor.gender" id="gender" name="gender">
-                      
+
                         <option value="female" >female</option>
                         <option value="male" >male</option>
                       </select>
@@ -94,13 +94,20 @@
 
     <div class="row g-3">
       <div class="col-1">
-        <button type="submit" class="btn btn-primary" (click)=add(confirm.value)>Sign in</button>
+        <button type="submit" class="btn btn-primary" (click)=add(confirm.value)>Add</button>
 
       </div>
       <div class="col-1 ">
 
         <button type="reset" class="btn btn-danger">Reset</button>
       </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-3">
+        <button type="submit" class="btn btn-danger" (click)=back()>GO To Back</button>
+
+      </div>
+
     </div>
 
 

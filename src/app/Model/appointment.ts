@@ -8,7 +8,8 @@ export class Appointments {
         public PatientGender:string,
         public  appointmentDate:any,
         public  appointmentTime:string,
-        public  doctorName:String,
+        public  doctorName:string,
+        public   Injury:string,
          ){
 
     }
