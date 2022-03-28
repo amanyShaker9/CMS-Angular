@@ -39,7 +39,7 @@ export class MedicineListComponent implements OnInit {
   }
 
   postMedicine() {
-    this.medicineobj.Med_id = this.formValue.value.Med_id;
+    this.medicineobj._id = this.formValue.value._id;
     this.medicineobj.medicineName = this.formValue.value.medicineName;
     this.medicineobj.companyName = this.formValue.value.companyName;
     this.medicineobj.category = this.formValue.value.category;
@@ -61,8 +61,8 @@ export class MedicineListComponent implements OnInit {
   }
 
   Update(row: any) {
-    this.medicineobj.Med_id = row.Med_id;
-    this.formValue.controls['Med_id'].setValue(row.Med_id);
+    this.medicineobj._id = row._id;
+    this.formValue.controls['_id'].setValue(row._id);
     this.formValue.controls['medicineName'].setValue(row.medicineName);
     this.formValue.controls['companyName'].setValue(row.companyName);
     this.formValue.controls['category'].setValue(row.category);
@@ -72,7 +72,7 @@ export class MedicineListComponent implements OnInit {
   }
 
   updateMedicine() {
-    this.medicineobj.Med_id = this.formValue.value.Med_id;
+    this.medicineobj._id = this.formValue.value._id;
     this.medicineobj.medicineName = this.formValue.value.medicineName;
     this.medicineobj.companyName = this.formValue.value.companyName;
     this.medicineobj.category = this.formValue.value.category;
@@ -81,7 +81,7 @@ export class MedicineListComponent implements OnInit {
     this.medicineobj.stock = this.formValue.value.stock;
 
 
-    this.mdnSer.updateMedicine(this.medicineobj, this.medicineobj.Med_id).subscribe(res => {
+    this.mdnSer.updateMedicine(this.medicineobj, this.medicineobj._id).subscribe(res => {
       // console.log(res);
       alert("Medicine Updated Successfuly")
       this.getMedicine();
@@ -97,7 +97,7 @@ export class MedicineListComponent implements OnInit {
   }
 
   Delete(row: any) {
-    this.mdnSer.deleteMedicine(row.Med_id).subscribe(res => {
+    this.mdnSer.deleteMedicine(row._id).subscribe(res => {
       alert("Medicine Deleted");
       this.getMedicine();
     })

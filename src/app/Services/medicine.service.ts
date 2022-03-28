@@ -13,9 +13,9 @@ export class MedicineService {
   // new Medicine(3, 'Novalgine', 'Analgesics', 'NextCare', 350, '2022-12-28', 66)
   // ]
 
-  private baseUrl = "http://localhost:8070/medicine"
+  private baseUrl = "http://localhost:8080/medicine"
   getAllMedicine() {
-    return this.http.get<Medicine[]>(this.baseUrl);
+    return this.http.get<Medicine[]>(this.baseUrl+"/list");
   }
 
   // getMedicineById(mdn: Medicine,id: number){
@@ -30,7 +30,7 @@ export class MedicineService {
 
   updateMedicine(mdn: Medicine, id:number) {
     console.log(mdn);
-    return this.http.put<Medicine>("http://localhost:8070/medicine/"+id, mdn)
+    return this.http.put<Medicine>("http://localhost:8080/medicine/"+id, mdn)
   }
 
   deleteMedicine(id: number) {

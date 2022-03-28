@@ -29,4 +29,9 @@ export class PatientService {
   deletePatient(id:number){
     return this.http.delete(this.baseUrl+"/"+id);
   }
+
+  ////needed in invoice////
+  getpatientId(obj:any){
+    return this.http.get<Patient>(this.baseUrl);
+  }
 }

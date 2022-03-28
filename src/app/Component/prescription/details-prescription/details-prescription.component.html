@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="header">
+        <h1>Prescribtion Details</h1>
+    </div>
+    <div class="row">
+        <div class="alert alert-primary">
+            <h1 class="p-3">
+             Id :: {{prescribtionObj.pre_id}}<br/>
+             Patient Name :: {{prescribtionObj.patient_id?.firstName+" "+prescribtionObj.patient_id?.lastName}}<br/>
+             Doctor Name :: {{prescribtionObj.doctor_id?.firstName+" "+prescribtionObj.doctor_id?.lastName}}<br/>
+             Drug :: {{prescribtionObj.Med_id.medicineName}}<br/>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" (click)="goBack()">Go To List</button>
+    </div>
+</div>
+
+

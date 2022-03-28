@@ -1,0 +1,40 @@
+
+<div class="container shadow-lg">
+    <div class="header">
+        <h1>Edit Prescription</h1>
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="number" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="addon-wrapping"  disabled [(ngModel)]="prescription.pre_id">
+       
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName" aria-describedby="addon-wrapping"[(ngModel)]="prescription.patient_id.firstName"> 
+       
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="LastName" aria-label="LastName" aria-describedby="addon-wrapping" [(ngModel)]="prescription.patient_id.lastName" >
+        <!--  -->
+    </div>
+    <div class="input-group flex-nowrap">
+        <!-- [(ngModel)]="doctorId"  -->
+        <select  [(ngModel)]="prescription.doctor_id._id"  class="form-select" id="floatingSelect" >
+            <option  selected class="op" *ngFor="let item of doctorArray" value={{item._id}}>{{item.firstName+" "+item.lastName}}</option>   
+          </select>
+        </div>
+
+        <div class="input-group flex-nowrap">   
+            <select   [(ngModel)]="prescription.Med_id._id" class="form-select" id="floatingSelect" aria-describedby="addon-wrapping">
+            
+                <option  selected class="op" *ngFor="let items of  medicineArray" value={{items._id}}>{{items.medicineName}}</option>   
+              </select>
+        </div>
+   
+
+    <div class="btnAdd">
+        <button class="btn btn-primary" (click)="editPrescription()">Edit</button>
+    </div>
+</div>  
+
+<div class="footer">
+    <a (click)="goBack()">Go To List</a>
+</div>

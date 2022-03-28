@@ -22,7 +22,7 @@ data:Patient=new Patient(0,"","","","",{street:0,city:"",country:""});
 
   getOne(){
    
-  this.patientServ.getOnePatient(this.data._id).subscribe(data=>{
+  this.patientServ.getOnePatient(this.data._id!).subscribe(data=>{
     this.data=data;  
     
     }) 

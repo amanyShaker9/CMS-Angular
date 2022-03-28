@@ -6,11 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './Component/core/core.module';
 import { MedicineListComponent } from './Component/medicine/medicine';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MedicineService } from './Services/medicine.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InvoiceModule } from './Component/invoice/invoice.module';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { PrescriptionListComponent } from './Component/prescription/prescription-list/prescription-list.component';
+
+
 
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
@@ -19,7 +19,12 @@ import { DoctorModule} from './Component/doctor/doctor.module';
 import{ClientServiceModule}from './Component/client-service/clientServise.module'
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
+
+
+import { PrescriptionModule } from './Component/prescription/prescription.module';
+
 import { PaymentPageComponent } from './payment-page/payment-page.component';
+
 
 import { AddAppointmentComponent } from './Component/appointment/add-appointment/add-appointment.component';
 import { ViewAppointmentComponent } from './Component/appointment/view-appointment/view-appointment.component';
@@ -28,7 +33,9 @@ import { PatientDashBoardModule } from './Component/patient-dash-board/patient-d
 import { DashboardComponent } from './Component/patient-dash-board/dashboard/dashboard.component';
 import { AdminComponent } from './Component/admin/admin.component';
 
+
 const routes:Routes=[
+<<<<<<< HEAD
   // {path:'',redirectTo:'register',pathMatch:"full"},
   // {path:'register',component:SignupComponent,pathMatch:"full"},
   // {path:'login',component:SigninComponent,pathMatch:"full"},
@@ -37,16 +44,40 @@ const routes:Routes=[
   // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
   // {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
   // {path:'Admin',component:AdminComponent ,pathMatch:"full"}
+=======
+  {path:'',redirectTo:'register',pathMatch:"full"},
+  {path:'register',component:SignupComponent,pathMatch:"full"},
+  {path:'login',component:SigninComponent,pathMatch:"full"},
+  {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
+  {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
+  {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+
+
+  // {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
+  // {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
+  // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+  {path:'Admin',component:AdminComponent ,pathMatch:"full"}
+
+>>>>>>> 8106d0cf4712436604d8e91dc3c95e08f04999cf
 ]
 @NgModule({
   declarations: [
+
     AppComponent,
+
+   
+    
+   
+
     MedicineListComponent,
     AdminComponent,
     
    
-    PrescriptionListComponent,
+  
     PaymentPageComponent
+
 
 
 
@@ -56,6 +87,22 @@ const routes:Routes=[
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+
+
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+   
+    ReactiveFormsModule,
+    
+
+    InvoiceModule,
+    PrescriptionModule,
+    NgbPaginationModule, NgbAlertModule,
+
+    DoctorModule,
+  
+
     NgbPaginationModule, NgbAlertModule, FormsModule, HttpClientModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -70,14 +117,22 @@ const routes:Routes=[
     HttpClientModule,
     ClientServiceModule
 
+
   ],
   providers: [
+
+
 
     NgbPaginationModule,
      NgbAlertModule,
      RegistrationModule,
      AppointmentModule,
+
+     //RouterModule.forRoot(routes),
+     RouterModule,
+
     //  RouterModule.forRoot(routes),
+
      DoctorModule,
     PatientDashBoardModule,
     ReactiveFormsModule

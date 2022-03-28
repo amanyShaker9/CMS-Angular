@@ -31,7 +31,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of medicine">
-              <td>{{item.Med_id}}</td>
+              <td>{{item._id}}</td>
               <td>{{item.medicineName}}</td>
               <td>{{item.companyName}}</td>
               <td>{{item.category}}</td>
@@ -69,7 +69,7 @@
         <div class="form">
           <div class="container">
           <label>ID</label>
-          <input type="text" formControlName="Med_id">
+          <input type="text" formControlName="_id">
         </div>
         <div class="container">
           <label>Medicine Name</label>

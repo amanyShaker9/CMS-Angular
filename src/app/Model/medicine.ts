@@ -1,6 +1,6 @@
 export class Medicine {
 
-    constructor(public Med_id: number=0,
+    constructor(public _id: number=0,
         public medicineName?: string,
         public category?: string,
         public companyName?: string,
@@ -9,12 +9,6 @@ export class Medicine {
         public stock?: number,
         ) {
     }
-    // get Id?() {
-    //     return this?.Med_id;
-    // }
-    // set Id(id: number) {
-    //      this.Med_id= id;
-    // }
-
+  
   
 }

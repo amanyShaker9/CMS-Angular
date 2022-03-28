@@ -1,9 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+
 import {Bill} from '../../../Model/bill';
 import {Doctor} from '../../../Model/doctor';
+import {Patient} from '../../../Model/patient';
+
 import {InvoiceService} from '../../../Services/invoice.service';
-import { DectorService} from '../../../Services/dector.service';
+
+import {DectorService} from '../../../Services/dector.service';
+import { PatientService } from 'src/app/Services/patient.service';
+
+
 import { FormBuilder,FormGroup } from '@angular/forms';
+
+
+
 @Component({
   selector: 'app-bill-list',
   templateUrl: './bill-list.component.html',
@@ -14,10 +24,17 @@ export class BillListComponent implements OnInit {
   showAdd !:boolean;
   showUpdate !:boolean;
   billobj: Bill=new Bill();
-  constructor(public invServ:InvoiceService,private formBuilder:FormBuilder,public docserve: DectorService) { }
-   billArray:Bill[]=[];
-   doctorArray:Doctor[]=[];
+
+  constructor(public invServ:InvoiceService,private formBuilder:FormBuilder,public docserve:DectorService,public patientServ:PatientService) { }
+   
+  billArray:Bill[]=[];
+  doctorArray:Doctor[]=[];
+patientArray:Patient[]=[];
+
+
    doctorId:number=0;
+   patientId:number=0;
+   patientObj:Patient=new Patient(0,"","","","",{street:0,city:"",country:""});
   ngOnInit(): void {
 
     this.formValue=this.formBuilder.group({
@@ -32,6 +49,7 @@ export class BillListComponent implements OnInit {
     });
     this.allDoctor();
     this.allBill();
+    this.allPatient();
    }
    allDoctor(){
  //subscribe on observable
@@ -50,9 +68,27 @@ export class BillListComponent implements OnInit {
      });
      console .log( this.billArray);
    }
+
+   allPatient(){
+     this.patientServ.getAllPatients().subscribe({
+       next:a=>{this.patientArray=a}
+     });
+   }
+
+   getPatientId(fName:string,lName:string){
+       for(let i=0;i<this.patientArray.length;i++){
+         if(this.patientArray[i].firstName==fName&&this.patientArray[i].lastName==lName){
+           this.patientId==this.patientArray[i]._id;
+          
+         }else{
+           alert("this patient isn't exsist");
+         }
+       }
+       return this.patientId;
+   }
 postData(){
   this.billobj.bill_id=this.formValue.value.billID;
-  this.billobj.patient_id=this.formValue.value.patientName;
+  this.billobj._id =this.getPatientId(this.formValue.value.patientFName,this.formValue.value.patientLName)//this.patientid(this.formValue.value.patientName);
   this.billobj.doctor_id=this.formValue.value.doctorName;
   this.billobj.admission_id=this.formValue.value.admissionID;
   this.billobj.totalPrice=this.formValue.value.price;
@@ -92,7 +128,7 @@ this.showAdd=false;
 updateData(){
 
   this.billobj.bill_id=this.formValue.value.billID;
-  this.billobj.patient_id=this.formValue.value.patientName;
+  this.billobj._id=this.formValue.value.patientName;
   this.billobj.doctor_id=this.formValue.value.doctorName;
   this.billobj.admission_id=this.formValue.value.admissionID;
   this.billobj.totalPrice=this.formValue.value.price;
@@ -128,6 +164,13 @@ doctorid(item:any){
   debugger;
  this. doctorId=item.id;
  console.log(this. doctorId);
+}
+patientid(item:any){
+ this.patientServ.getpatientId(item).subscribe({
+  next:a=>{this.patientObj=a}
+
+ });
+ return this.patientObj._id;
 }
 
   }

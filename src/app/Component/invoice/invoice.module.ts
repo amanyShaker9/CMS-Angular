@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { BillListComponent } from './bill-list/bill-list.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -10,10 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule 
+  ],
+  exports:[
+    BillListComponent,
     ReactiveFormsModule
-  ],exports:[
-    BillListComponent
-
   ]
 })
 export class InvoiceModule { }
