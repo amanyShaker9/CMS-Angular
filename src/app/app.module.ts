@@ -29,14 +29,14 @@ import { DashboardComponent } from './Component/patient-dash-board/dashboard/das
 import { AdminComponent } from './Component/admin/admin.component';
 
 const routes:Routes=[
-  {path:'',redirectTo:'register',pathMatch:"full"},
-  {path:'register',component:SignupComponent,pathMatch:"full"},
-  {path:'login',component:SigninComponent,pathMatch:"full"},
+  // {path:'',redirectTo:'register',pathMatch:"full"},
+  // {path:'register',component:SignupComponent,pathMatch:"full"},
+  // {path:'login',component:SigninComponent,pathMatch:"full"},
   // {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
   // {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
   // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
-  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
-  {path:'Admin',component:AdminComponent ,pathMatch:"full"}
+  // {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+  // {path:'Admin',component:AdminComponent ,pathMatch:"full"}
 ]
 @NgModule({
   declarations: [
