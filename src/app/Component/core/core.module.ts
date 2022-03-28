@@ -12,18 +12,8 @@ import { AddAppointmentComponent } from '../appointment/add-appointment/add-appo
 import { ViewAppointmentComponent } from '../appointment/view-appointment/view-appointment.component';
 import { EditAppointmentComponent } from '../appointment/edit-appointment/edit-appointment.component';
 import { AdminComponent } from '../admin/admin.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
-const routes:Routes=[
-
-  {path:'Admin',component:AdminComponent ,pathMatch:"full",children:[
-
-    {path:'Admin/appointment/add',component:AddAppointmentComponent,},
-    {path:'Admin/appointment/view',component:ViewAppointmentComponent ,},
-    {path:'Admin/appointment/edit',component:EditAppointmentComponent,},
-  ]}
-
-  
-]
 
 @NgModule({
   declarations: [
@@ -37,7 +27,7 @@ const routes:Routes=[
     MatButtonModule,
     MatSidenavModule,
     MatTreeModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule
   ],
   exports:[
     HeaderComponent,
