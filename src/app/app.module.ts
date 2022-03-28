@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +12,6 @@ import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-b
 
 
 
-
-
-
-
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,13 +20,18 @@ import{ClientServiceModule}from './Component/client-service/clientServise.module
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
 
+
 import { PrescriptionModule } from './Component/prescription/prescription.module';
+
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+
 
 import { AddAppointmentComponent } from './Component/appointment/add-appointment/add-appointment.component';
 import { ViewAppointmentComponent } from './Component/appointment/view-appointment/view-appointment.component';
 import { EditAppointmentComponent } from './Component/appointment/edit-appointment/edit-appointment.component';
 import { PatientDashBoardModule } from './Component/patient-dash-board/patient-dash-board.module';
 import { DashboardComponent } from './Component/patient-dash-board/dashboard/dashboard.component';
+import { AdminComponent } from './Component/admin/admin.component';
 
 
 const routes:Routes=[
@@ -41,7 +41,14 @@ const routes:Routes=[
   {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
   {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
   {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
-  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"}
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+
+
+  // {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
+  // {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
+  // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+  {path:'Admin',component:AdminComponent ,pathMatch:"full"}
 
 ]
 @NgModule({
@@ -49,9 +56,19 @@ const routes:Routes=[
 
     AppComponent,
 
-    MedicineListComponent
+   
     
    
+
+    MedicineListComponent,
+    AdminComponent,
+    
+   
+  
+    PaymentPageComponent
+
+
+
 
   ],
   imports: [
@@ -59,6 +76,7 @@ const routes:Routes=[
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+
 
     HttpClientModule,
     FormsModule,
@@ -71,19 +89,39 @@ const routes:Routes=[
     PrescriptionModule,
     NgbPaginationModule, NgbAlertModule,
 
-    DoctorModule
+    DoctorModule,
   
+
+    NgbPaginationModule, NgbAlertModule, FormsModule, HttpClientModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule,
+    CoreModule,
+
+    InvoiceModule,
+    NgbPaginationModule, NgbAlertModule,
+
+
+    DoctorModule,
+    HttpClientModule,
+    ClientServiceModule
+
 
   ],
   providers: [
+
 
 
     NgbPaginationModule,
      NgbAlertModule,
      RegistrationModule,
      AppointmentModule,
+
      //RouterModule.forRoot(routes),
      RouterModule,
+
+    //  RouterModule.forRoot(routes),
+
      DoctorModule,
     PatientDashBoardModule,
     ReactiveFormsModule

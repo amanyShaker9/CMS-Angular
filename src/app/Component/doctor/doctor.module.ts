@@ -11,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DoctorDatailsComponent } from './doctor-datails/doctor-datails.component';
 const routes:Routes=[
-  {path:"",component: DoctorListComponent },
+  // {path:"",component: DoctorListComponent },
   {path:"list",component: DoctorListComponent },
 
   {path:"edit/:id",component:EditDoctorComponent},

@@ -27,8 +27,8 @@ export class SigninComponent implements OnInit {
           //  this._Router.navigate('/doctor');
            console.log("Hi doctor")
          }else if(result.message=="adminlogin"){
-          // this._Router.navigate('/admin');
-           console.log("Hi admin")
+          this._Router.navigate(['/Admin']);
+          //  console.log("Hi admin")
          }else if(result.message=="patientlogin"){
            this._Router.navigate(['/patient/dashboard']);
           localStorage.setItem('currentUser',result.data);

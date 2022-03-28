@@ -30,7 +30,6 @@ export class MedicineListComponent implements OnInit {
       stock: ""
     });
     this.getMedicine();
-
   }
 
   getMedicine() {

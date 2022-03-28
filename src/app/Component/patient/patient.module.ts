@@ -12,11 +12,11 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 
 
 const routes:Routes=[
-{path:"",redirectTo:"/patient",pathMatch:"full"},
-{path:'patient',component:PatientListComponent},
-{path:'patient/add',component:AddPatientComponent,pathMatch:"full"},
-{path:'patient/details/:id',component:PatientDetailsComponent,pathMatch:"full"},
-{path:'patient/edit/:id',component:EditPatientComponent,pathMatch:"full"},
+// {path:"",redirectTo:"/patient",pathMatch:"full"},
+{path:'list',component:PatientListComponent},
+{path:'add',component:AddPatientComponent,pathMatch:"full"},
+{path:'details/:id',component:PatientDetailsComponent,pathMatch:"full"},
+{path:'edit/:id',component:EditPatientComponent,pathMatch:"full"},
 
 ]
 @NgModule({
@@ -28,8 +28,8 @@ const routes:Routes=[
   ],
   imports: [
     CommonModule,
-    HttpClientModule,RouterModule.forRoot(routes),
-    FormsModule
+    HttpClientModule,
+    FormsModule,RouterModule.forChild(routes)
   ],
   exports:[
     PatientListComponent,
