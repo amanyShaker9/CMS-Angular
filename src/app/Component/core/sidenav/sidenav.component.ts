@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {FlatTreeControl} from '@angular/cdk/tree';
+import { Router,RouterLink } from '@angular/router';
+
+
 
 
 interface FoodNode {
   name: string;
   children?: FoodNode[];
+
+  
 }
 
 const TREE_DATA: FoodNode[] = [
@@ -65,7 +70,7 @@ export class SidenavComponent implements OnInit {
   );
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-  constructor() { 
+  constructor(public _Router:Router) { 
     this.dataSource.data = TREE_DATA;
   }
 
@@ -73,4 +78,8 @@ export class SidenavComponent implements OnInit {
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+  goAppointment(){
+  this._Router.navigate(['/appointment/view']);
+  }
 }

@@ -29,23 +29,23 @@ import { ViewAppointmentComponent } from './Component/appointment/view-appointme
 import { EditAppointmentComponent } from './Component/appointment/edit-appointment/edit-appointment.component';
 import { PatientDashBoardModule } from './Component/patient-dash-board/patient-dash-board.module';
 import { DashboardComponent } from './Component/patient-dash-board/dashboard/dashboard.component';
+import { AdminComponent } from './Component/admin/admin.component';
 
 const routes:Routes=[
   {path:'',redirectTo:'register',pathMatch:"full"},
   {path:'register',component:SignupComponent,pathMatch:"full"},
   {path:'login',component:SigninComponent,pathMatch:"full"},
-  {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
-  {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
-  {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
-  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"}
-
-
-
+  // {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
+  // {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
+  // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
+  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
+  {path:'Admin',component:AdminComponent ,pathMatch:"full"}
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    MedicineListComponent
+    MedicineListComponent,
+    AdminComponent
     
    
   ],
