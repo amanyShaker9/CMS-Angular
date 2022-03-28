@@ -35,7 +35,6 @@ import { AdminComponent } from './Component/admin/admin.component';
 
 
 const routes:Routes=[
-<<<<<<< HEAD
   // {path:'',redirectTo:'register',pathMatch:"full"},
   // {path:'register',component:SignupComponent,pathMatch:"full"},
   // {path:'login',component:SigninComponent,pathMatch:"full"},
@@ -44,23 +43,6 @@ const routes:Routes=[
   // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
   // {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
   // {path:'Admin',component:AdminComponent ,pathMatch:"full"}
-=======
-  {path:'',redirectTo:'register',pathMatch:"full"},
-  {path:'register',component:SignupComponent,pathMatch:"full"},
-  {path:'login',component:SigninComponent,pathMatch:"full"},
-  {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
-  {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
-  {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
-  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
-
-
-  // {path:'appointment/add',component:AddAppointmentComponent,pathMatch:"full"},
-  // {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
-  // {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
-  {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"},
-  {path:'Admin',component:AdminComponent ,pathMatch:"full"}
-
->>>>>>> 8106d0cf4712436604d8e91dc3c95e08f04999cf
 ]
 @NgModule({
   declarations: [
