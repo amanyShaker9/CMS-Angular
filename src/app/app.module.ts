@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,10 +12,6 @@ import { InvoiceModule } from './Component/invoice/invoice.module';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PrescriptionListComponent } from './Component/prescription/prescription-list/prescription-list.component';
 
-
-
-
-
 import { RegistrationModule } from './Component/registration/registration.module';
 import { AppointmentModule } from './Component/appointment/appointment.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +19,7 @@ import { DoctorModule} from './Component/doctor/doctor.module';
 import{ClientServiceModule}from './Component/client-service/clientServise.module'
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 
 const routes:Routes=[
@@ -38,7 +34,8 @@ const routes:Routes=[
   declarations: [
     AppComponent,
     MedicineListComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+    PaymentPageComponent
 
 
 
@@ -51,7 +48,6 @@ const routes:Routes=[
     NgbPaginationModule, NgbAlertModule, FormsModule, HttpClientModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
     NgbModule,
     CoreModule,
 
