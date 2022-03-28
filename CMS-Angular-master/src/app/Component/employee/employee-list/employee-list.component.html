@@ -1,0 +1,81 @@
+<h1>All Employee</h1>
+            <div class="row">
+               <div class="col-12">
+                    <table class="table">
+
+                        <thead>
+                          <tr>
+                            <div class="row">
+                                <div class="d-none d-md-block col-md-2 col-lg-1"><th>#</th></div>
+                                <div class="d-none d-lg-block col-lg-1"><th>Image</th></div>
+                                <div class="d-none d-md-block col-md-3 col-lg-1"><th>Deignation</th></div>
+                                <div class="d-none d-lg-block col-lg-1"><th>Mobile</th></div>
+                                <div class="d-none d-lg-block col-lg-2"><th>Email</th></div>
+                                <div class="d-none d-lg-block col-lg-2"><th>Date</th></div>
+
+                            </div>
+
+
+
+
+
+                          </tr>
+                        </thead>
+
+
+                        <tbody class="align-items-center">
+                          <tr   *ngFor="let item ofemployees">
+                            <div class="row">
+
+                              <div class="d-none d-md-block col-md-1">  <td>{{item.Id}}</td></div>
+
+                                <div class="d-none d-md-block col-md-1">  <td><img src=""></td></div>
+                                <div class="d-none d-md-block col-md-3 col-lg-1"><td>{{item.Deignation}}</td></div>
+                                <div class="d-none d-lg-block col-lg-1"> <td>{{item.Mobile}}</td></div>
+                                <div class="d-none d-lg-block col-lg-2"> <td>{{item.Email}}</td></div>
+                                <div class="d-none d-lg-block col-lg-2"><td>{{item.Date}}</td></div>
+                                <div class="col-6 col-md-1">
+                                    <td>
+
+
+
+                                        <a [routerLink]="['/employee/details/',item.Id]"routerLinkActive="Active" routerLinkActiveOption='{exact:true}'(click)=sendId(item.Id)>      <i class="fa-solid fa-user" ></i></a>
+
+
+
+
+                                      </td>
+                                    <td>
+                                      <a  [routerLink]="['/employee/edit/',item.Id]" routerLinkActive="Active" routerLinkActiveOption='{exact:true}' (click)=sendId(item.Id)>    <i class="fa-solid fa-pen-to-square"></i></a>
+
+
+
+                                    </td>
+                                    <td>
+
+                                        <i class="fa-solid fa-trash-can" (click)="delete(item.Id)"></i>
+
+                                    </td>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+                                  </div>
+                          </tr>
+
+
+                        </tbody>
+
+
+
+                    </table>
+                  </div>
+            </div>
+

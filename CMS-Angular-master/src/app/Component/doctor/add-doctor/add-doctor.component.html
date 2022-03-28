@@ -1,0 +1,114 @@
+<h1>Add Doctor</h1>
+<form method="get" action="add-doctor.component.html" enctype="multipart/form-data">
+              <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="First name *" aria-label="firstname" id="firstname" name="firstname" [(ngModel)]="newDoctor.firstName" >
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="Last name *" aria-label="Last name"id="lastname" name="firstname" [(ngModel)]="newDoctor.lastName">
+
+                  </div>
+              </div>
+              <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" placeholder="National number *" aria-label="Id"  id="_id" name="_id"[(ngModel)]="newDoctor._id">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" placeholder="Age *" aria-label="Age"id="Age" id="age" name="age"  [(ngModel)]="newDoctor.age">
+
+                  </div>
+              </div>
+              <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+
+                      <select id="Gender" class="form-select"  [(ngModel)]="newDoctor.gender" id="gender" name="gender">
+
+                        <option value="female" >female</option>
+                        <option value="male" >male</option>
+                      </select>
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="number" class="form-control" placeholder="Mobile *" aria-label="Mobile" id="phone"  name="phone" [(ngModel)]="newDoctor.phone">
+
+                </div>
+              </div>
+              <div class="row g-3">
+
+                      <div class="col-12 col-md-6">
+                        <input type="password" class="form-control" placeholder="password *" aria-label="Email" id="password" name="password" [(ngModel)]="newDoctor.password">
+
+                    </div>
+                    <div class="col">
+                      <input #confirm type="password" class="form-control" placeholder="confirm password *" aria-label="confirmPassword" id="confirmPasswor" name="confirmPasswor">
+                    </div>
+             </div>
+             <div class="row g-3" *ngIf="checkPass==true">
+
+              <div class="col-12">
+                       <span> password not equal confirm password</span>
+               </div>
+
+           </div>
+        <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="Email"  name="Email"[(ngModel)]="newDoctor.email">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <input type="date" class="form-control" placeholder="join date *" aria-label="join_Date" id="join_Date" name="join_Date"[(ngModel)]="newDoctor.join_Date">
+
+                    </div>
+        </div>
+        <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="City *" aria-label="city" id="City"  name="city"[(ngModel)]="newDoctor.address.city">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="street *" aria-label="street" id="street"name="street" [(ngModel)]="newDoctor.address.street">
+
+              </div>
+        </div>
+        <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" placeholder="Department *" aria-label="Department" id="Department" name="Department"  [(ngModel)]="newDoctor.Department">
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" placeholder="specilization *" aria-label="specilization" id="specilization" name="specilization" [(ngModel)]="newDoctor.specilization">
+
+            </div>
+
+        </div>
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+
+            <input type="text" class="form-control" placeholder="upload your image *" aria-label="image" id="image" name="image"[(ngModel)]="newDoctor.img">
+          </div>
+          <div class="col-12 col-md-6">
+
+            <input type="text" class="form-control" placeholder="Degree *" aria-label="specilization" id="Degree" name="Degree" [(ngModel)]="newDoctor.Degree">
+
+          </div>
+
+    </div>
+
+
+    <div class="row g-3">
+      <div class="col-1">
+        <button type="submit" class="btn btn-primary" (click)=add(confirm.value)>Add</button>
+
+      </div>
+      <div class="col-1 ">
+
+        <button type="reset" class="btn btn-danger">Reset</button>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-3">
+        <button type="submit" class="btn btn-danger" (click)=back()>GO To Back</button>
+
+      </div>
+
+    </div>
+
+
+</form>

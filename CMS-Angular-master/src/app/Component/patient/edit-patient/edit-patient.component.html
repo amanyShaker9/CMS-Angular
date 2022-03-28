@@ -1,0 +1,34 @@
+
+<div class="container shadow-lg">
+    <div class="header">
+        <h1>Edit Patient</h1>
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="number" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="addon-wrapping" [(ngModel)]="data._id" disabled>
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName" aria-describedby="addon-wrapping" [(ngModel)]="data.firstName">
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="LastName" aria-label="LastName" aria-describedby="addon-wrapping" [(ngModel)]="data.lastName">
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Gender" aria-label="Gender" aria-describedby="addon-wrapping" [(ngModel)]="data.gender">
+    </div>
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="addon-wrapping" [(ngModel)]="data.phone">
+    </div>
+    <div class="input-group flex-nowrap address">
+        <input type="number" class="form-control" placeholder="Street" aria-label="Street" aria-describedby="addon-wrapping" [(ngModel)]="data.address.street">
+        <input type="text" class="form-control" placeholder="City" aria-label="City" aria-describedby="addon-wrapping" [(ngModel)]="data.address.city">
+        <input type="text" class="form-control" placeholder="Country" aria-label="Country" aria-describedby="addon-wrapping" [(ngModel)]="data.address.country">
+    </div>
+
+    <div class="btnAdd">
+        <button class="btn btn-primary" (click)="editPatient()">Edit</button>
+    </div>
+</div>  
+
+<div class="footer">
+    <a (click)="goBack()">Go To List</a>
+</div>

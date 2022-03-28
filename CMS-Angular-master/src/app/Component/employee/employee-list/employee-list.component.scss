@@ -1,0 +1,41 @@
+.card{
+    display: flex;
+  }
+  i{
+    font-size: 20px;
+    margin-right: 5px;
+    font-weight: lighter;
+    margin-left: 10px;
+  }
+  .fa-pen-to-square{
+    color:blue;
+  }
+  .fa-trash-can{
+  
+    color:red;
+  }.fa-user{
+    color:green;
+  }
+  td{
+    padding: 10px;
+  }
+  th{
+    font-size: 20px;
+    color: grey;
+  }
+  td{
+    font-weight: bold;
+  }
+  h1{
+    color: #d91548;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  div{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .row{
+    margin-left: 10px;
+    margin-right: 10px;
+  }

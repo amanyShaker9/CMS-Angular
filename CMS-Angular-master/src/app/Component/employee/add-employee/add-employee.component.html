@@ -1,0 +1,54 @@
+<h1>Add Employee</h1>
+<form method="get" action="add-employee.component.html" enctype="multipart/form-data">
+              <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <input type="number" class="form-control" placeholder="National number *" aria-label="Id"  id="Id" name="Id"[(ngModel)]="newEmployee.Id">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="upload your image *" aria-label="Image" id="Image" name="Image"[(ngModel)]="newEmployee.Image">
+                  </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <input type="number" class="form-control" placeholder="Mobile *" aria-label="Mobile" id="Mobile"  name="Mobile" [(ngModel)]="newEmployee.Mobile">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Deignation *" aria-label="Deignation" id="Deignation" name="Deignation"  [(ngModel)]="newEmployee.Deignation">
+                </div>
+              </div>
+        <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="Email"  name="Email"[(ngModel)]="newEmployee.Email">
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <input type="date" class="form-control" placeholder="Date *" aria-label="Date" id="Date" name="Date"[(ngModel)]="newEmployee.Date">
+                    </div>
+        </div>
+        <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="City *" aria-label="City" id="City"  name="City"[(ngModel)]="newEmployee.Address.City">
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="text" class="form-control" placeholder="Street *" aria-label="Street" id="Street"name="Street" [(ngModel)]="newEmployee.Address.Street">
+              </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-1">
+            <button type="submit" class="btn btn-primary" (click)=Add()>Add</button>
+    
+          </div>
+          <div class="col-1 ">
+    
+            <button type="reset" class="btn btn-danger">Reset</button>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-3">
+            <button type="submit" class="btn btn-danger" (click)=goBack()>GO To Back</button>
+    
+          </div>
+    
+        </div>
+
+
+</form>

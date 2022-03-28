@@ -1,0 +1,37 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+              <div class="col-12">
+                    <div class="card text-center">
+                       <div class="row"></div>
+                          <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs">
+                              <li class="nav-item" >
+                                <a class="nav-link active" id="first" routerLink="" routerLinkActive="Active" routerLinkActiveOption='{exact:true}'><i class="fa-solid fa-house"></i></a>
+                              </li>
+                              <li class="nav-item d-none d-md-block ">
+                                <a class="nav-link" routerLink="employee/list" routerLinkActive="Active" routerLinkActiveOption='{exact:true}'>Employeelist</a>
+                              </li>
+                              <li class="nav-item d-none d-md-block ">
+                                <a class="nav-link" routerLink="employee/add" routerLinkActive="Active" routerLinkActiveOption='{exact:true}'>add employee</a>
+                              </li>
+                              <!-- <li class="nav-item d-none d-md-block ">
+                                <a class="nav-link" routerLink="doctor/edit/1" routerLinkActive="Active" routerLinkActiveOption='{exact:true}'>edit doctor</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" routerLink="doctor/profile/1" routerLinkActive="Active" routerLinkActiveOption='{exact:true}'>profile</a>
+                              </li> -->
+  
+                            </ul>
+                          </div>
+  
+  
+                          <div class="card-body">
+                                <router-outlet></router-outlet>
+                          </div>
+            </div>
+  
+  
+    </div>
+  </div>

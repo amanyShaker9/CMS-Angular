@@ -1,0 +1,24 @@
+$NavColor:#12aada;
+$fontColor:#fff;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.navbar i{
+  color: rgb(108, 162, 184) !important;
+  /* font-size: 20px; */
+}
+.navbar{
+  box-shadow: 5px 5px 10px #ccc;
+  padding: 30px !important;
+  margin-bottom: 0 !important;
+  background-color: $NavColor !important;
+  
+}  
+.navbar #logo{
+  color: $fontColor;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
