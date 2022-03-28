@@ -1,1 +1,58 @@
-<p>prescription-list works!</p>
+<section class="ftco-section">
+    <!--===========================-->
+    <div class="header ">
+      <div class="input-group ">
+        <input type="text" class="form-control bg-light border-0 p-3" placeholder="search" aria-label="Recipient's username" aria-describedby="button-addon2">
+      </div>
+      <div>
+        <button class="nav-link"  routerLink="/Prescription/add" routerLinkActive="active" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+    <!--===========================-->
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrap shadow-lg">
+                    <table class="table table-responsive-xl">
+                      <thead>
+                        <tr>                           
+                           <th>#</th>
+                            <th>Patient Name</th>
+                            <th>Doctor Name</th>              
+                            <th>Operations</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="alert" role="alert" *ngFor="let item of prescriptionArr">
+                          <td>{{item.pre_id}}</td>
+                          <td>{{item.patient_id?.firstName+" "+item.patient_id?.lastName}}</td>
+                          <td>{{item.doctor_id?.firstName+" "+item.doctor_id?.lastName}}</td>
+                         
+                         
+                          <td>
+                            <button type="button" class="btn btn-outline-info"  [routerLink]="['/Prescription/details',item.pre_id]">Details</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-success" [routerLink]="['/Prescription',item.pre_id]">Update</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteById(item.pre_id)">Delete</button>
+                          </td>
+                          <td>
+
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

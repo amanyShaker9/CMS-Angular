@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 14fba9da0463390cdf532703cb9a126001175dcd
 export class Doctor {
     constructor(
        public _id:number,public firstName:string, public  lastName:string, public phone:number,public age:number,
@@ -12,7 +9,3 @@ export class Doctor {
 
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 14fba9da0463390cdf532703cb9a126001175dcd

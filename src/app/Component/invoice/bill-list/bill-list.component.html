@@ -13,6 +13,8 @@
                         <th>Patient Name</th>
                         <th>Admission Id</th>
                         <th>Doctor Name</th>
+                        <th>Payment Method</th>
+                        <th>Price</th>
                         <th>Statues</th>
                         <th>Date</th>
                         <th>Actions</th>
@@ -20,11 +22,14 @@
                   </thead>
                   <tbody>
                     <tr class="alert" role="alert"  *ngFor="let item of billArray">
+                      <td>{{item.patient_id?.firstName+" "+item.patient_id?.lastName}}</td>    
                       <td>{{item.admission_id}}</td>
-                      <td>{{item.admit_date}}</td>
-                      <td >{{item.totalPrice}}</td>
+                      <td>{{item.doctor_id?.firstName+" "+item.doctor_id?.lastName}}</td>                       
                       <td>{{item.paymentMethod}}</td>
+                      <td >{{item.totalPrice}}</td>
                       <td>{{item.paymentStatus}}</td>
+                      <td>{{item.admit_date}}</td>
+                  
                       <td>
                         <button id="update" class="btn btn-link"  (click)="editItem(item)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
                         <button id ="delete" class="btn btn-link" (click)="removeItem(item)"><i class="bi bi-trash"></i></button>
@@ -58,8 +63,13 @@
            
           </div>
           <div class="mb-3">
-            <label for="exampleInputPname" class="form-label">Patient Name</label>
-            <input type="text" class="form-control" id="exampleInputPname" formControlName="patientName">
+            <label for="exampleInputPFname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputPFname" formControlName="patientFName">
+           
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPLname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputPLname" formControlName="patientLName">
            
           </div>
           <div class="mb-3">
@@ -70,8 +80,8 @@
             <label for="exampleInputDn" class="form-label">Doctor Name</label>
             <!-- <input type="text" class="form-control" id="exampleInputDn" formControlName="doctorName"> -->
             <div class="form-floating">
-              <select [(ngModel)]="doctorId" class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="payMethod">
-                <option class="op" *ngFor="let item of doctorArray" selected value={{item._id}}>{{item.firstName}}</option>
+              <select [(ngModel)]="doctorId"  class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="doctorName">
+                <option  selected class="op" *ngFor="let item of doctorArray" value={{item._id}}>{{item.firstName}}</option>
                
               </select>
             </div>

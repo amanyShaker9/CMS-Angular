@@ -17,17 +17,17 @@ export class EditPatientComponent implements OnInit {
   data:Patient=new Patient(0,"","","","",{street:0,city:"",country:""});
   ngOnInit(): void {
     this.data._id=this.ar.snapshot.params['id'];    
-    this.patientServ.getOnePatient(this.data._id).subscribe(data=>{
-    this.data=data;  
+    // this.patientServ.getOnePatient(this.data._id).subscribe(data=>{
+    // this.data=data;  
     
-    }) 
+    // }) 
   }
   
   editPatient(){
-    this.patientServ.updatePatient(this.data._id,this.data).subscribe(data=>{
-                  console.log(data);
-        }   
-    )
+    // this.patientServ.updatePatient(this.data._id,this.data).subscribe(data=>{
+    //               console.log(data);
+    //     }   
+    // )
   }
   goBack(){
     this.router.navigate(['/patient']);

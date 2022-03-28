@@ -12,8 +12,7 @@ import { CoreModule } from './Component/core/core.module';
 import { InvoiceModule } from './Component/invoice/invoice.module';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
-import { PrescriptionListComponent } from './Component/prescription/prescription-list/prescription-list.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -25,6 +24,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DoctorModule} from './Component/doctor/doctor.module';
 import { SignupComponent } from './Component/registration/signup/signup.component';
 import { SigninComponent } from './Component/registration/signin/signin.component';
+import { PrescriptionModule } from './Component/prescription/prescription.module';
+
 const routes:Routes=[
   // {path:'',redirectTo:'signUp',pathMatch:"full"},
   {path:'register',component:SignupComponent,pathMatch:"full"},
@@ -35,8 +36,10 @@ const routes:Routes=[
 ]
 @NgModule({
   declarations: [
-    AppComponent,
-    PrescriptionListComponent
+    AppComponent
+   
+   
+    
 
   ],
   imports: [
@@ -48,9 +51,12 @@ const routes:Routes=[
     HttpClientModule,
     FormsModule,
     NgbModule,
+   
+    ReactiveFormsModule,
     CoreModule,
 
     InvoiceModule,
+    PrescriptionModule,
     NgbPaginationModule, NgbAlertModule,
 
     DoctorModule,
