@@ -8,25 +8,28 @@
         <!--  -->
     </div>
     <div class="input-group flex-nowrap">
-        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName" aria-describedby="addon-wrapping" >
-        <!-- [(ngModel)]="prescription.patient_id.firstName" -->
+        <input type="text" class="form-control" placeholder="FirstName" aria-label="FirstName" aria-describedby="addon-wrapping"  [(ngModel)]="prescription.patient_id.firstName">
+        <!-- -->
     </div>
     <div class="input-group flex-nowrap">
-        <input type="text" class="form-control" placeholder="LastName" aria-label="LastName" aria-describedby="addon-wrapping" >
-        <!-- [(ngModel)]="prescription.patient_id.lastName" -->
+        <input type="text" class="form-control" placeholder="LastName" aria-label="LastName" aria-describedby="addon-wrapping" [(ngModel)]="prescription.patient_id.lastName">
+        <!--  -->
     </div>
-   
+ 
     <div class="input-group flex-nowrap">   
-    <select  [(ngModel)]="doctorId" class="form-select" id="floatingSelect" aria-describedby="addon-wrapping">
-        <option  selected class="op" *ngFor="let item of doctorArray" value={{item._id}}>{{item.firstName+" "+item.lastName}}</option>   
+    <select  [(ngModel)]="prescription.doctor_id._id" class="form-select"  aria-describedby="addon-wrapping"   aria-label="Doctor Name">
+      
+        <option  selected  class="op" *ngFor="let item of doctorArray" value={{item._id}}>{{item.firstName+" "+item.lastName}}</option>   
       </select>
     </div>
 
     <div class="input-group flex-nowrap">   
-        <select   class="form-select" id="floatingSelect" aria-describedby="addon-wrapping">
-            <option  selected class="op" *ngFor="let item of doctorArray" value={{item._id}}>{{item.firstName+" "+item.lastName}}</option>   
+        <select   [(ngModel)]="prescription.Med_id._id" class="form-select" id="floatingSelect" aria-describedby="addon-wrapping">
+        
+            <option  selected class="op" *ngFor="let items of  medicineArray" value={{items._id}}>{{items.medicineName}}</option>   
           </select>
     </div>
+
 
     <div class="btnAdd">
         <button class="btn btn-primary" (click)="Add()">Add</button>

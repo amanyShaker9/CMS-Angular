@@ -6,9 +6,9 @@
         <div class="alert alert-primary">
             <h1 class="p-3">
              Id :: {{prescribtionObj.pre_id}}<br/>
-             Patient Name :: {{prescribtionObj.patient_id?.firstName+" "+prescribtionObj.patient_id?.firstName}}<br/>
+             Patient Name :: {{prescribtionObj.patient_id?.firstName+" "+prescribtionObj.patient_id?.lastName}}<br/>
              Doctor Name :: {{prescribtionObj.doctor_id?.firstName+" "+prescribtionObj.doctor_id?.lastName}}<br/>
-             <!-- Drug :: {{prescribtionObj._id.}}<br/> -->
+             Drug :: {{prescribtionObj.Med_id.medicineName}}<br/>
             </h1>
         </div>
     </div>

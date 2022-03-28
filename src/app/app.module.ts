@@ -7,12 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './Component/core/core.module';
 import { MedicineListComponent } from './Component/medicine/medicine';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MedicineService } from './Services/medicine.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InvoiceModule } from './Component/invoice/invoice.module';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { PrescriptionListComponent } from './Component/prescription/prescription-list/prescription-list.component';
 
 
 
@@ -44,8 +42,6 @@ const routes:Routes=[
   {path:'appointment/view',component:ViewAppointmentComponent ,pathMatch:"full"},
   {path:'appointment/edit',component:EditAppointmentComponent,pathMatch:"full"},
   {path:'patient/dashboard',component:DashboardComponent ,pathMatch:"full"}
-
-
 
 ]
 @NgModule({

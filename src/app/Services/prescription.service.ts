@@ -16,10 +16,10 @@ export class PrescriptionService {
     return this.http.get<Prescription>(this.baseUrl+"/"+id);
   
   }
-  addPrescription(prescription:Prescription){
+  addPrescription(prescription:object){
     return this.http.post(this.baseUrl,prescription);
   }
-  updatePrescription(prescription:Prescription){
+  updatePrescription(prescription:any){
 
     return this.http.put<Prescription>(this.baseUrl+"/"+prescription.pre_id,prescription);
     

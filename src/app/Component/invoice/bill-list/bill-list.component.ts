@@ -34,7 +34,7 @@ patientArray:Patient[]=[];
 
    doctorId:number=0;
    patientId:number=0;
-   patientObj:Patient=new Patient();
+   patientObj:Patient=new Patient(0,"","","","",{street:0,city:"",country:""});
   ngOnInit(): void {
 
     this.formValue=this.formBuilder.group({

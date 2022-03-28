@@ -9,7 +9,7 @@ import { PrescriptionService } from 'src/app/Services/prescription.service';
   styleUrls: ['./details-prescription.component.scss']
 })
 export class DetailsPrescriptionComponent implements OnInit {
-  prescribtionObj:Prescription=new Prescription();
+  prescribtionObj :Prescription=new Prescription(0,{_id:0,firstName:"",lastName:""},{_id:0,firstName:"",lastName:""},{_id:0,medicineName:""});
   constructor(public presciptionServ:PrescriptionService,public router:Router,private ar:ActivatedRoute) { }
 
   ngOnInit(): void {
