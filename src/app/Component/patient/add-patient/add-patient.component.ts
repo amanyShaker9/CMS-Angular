@@ -32,6 +32,6 @@ export class AddPatientComponent implements OnInit {
    
   }
   goBack(){
-    this.router.navigate(['/patient']);
+    this.router.navigate(['/patient/list']);
   }
 }

@@ -32,6 +32,7 @@ import { EditAppointmentComponent } from './Component/appointment/edit-appointme
 import { PatientDashBoardModule } from './Component/patient-dash-board/patient-dash-board.module';
 import { DashboardComponent } from './Component/patient-dash-board/dashboard/dashboard.component';
 import { AdminComponent } from './Component/admin/admin.component';
+import { DatePipe } from '@angular/common';
 
 
 const routes:Routes=[
@@ -103,7 +104,7 @@ const routes:Routes=[
   ],
   providers: [
 
-
+    DatePipe,
 
     NgbPaginationModule,
      NgbAlertModule,

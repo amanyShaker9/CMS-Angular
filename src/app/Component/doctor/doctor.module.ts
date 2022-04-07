@@ -12,12 +12,12 @@ import { FormsModule } from '@angular/forms';
 import { DoctorDatailsComponent } from './doctor-datails/doctor-datails.component';
 const routes:Routes=[
   // {path:"",component: DoctorListComponent },
-  {path:"list",component: DoctorListComponent },
+  // {path:"list",component: DoctorListComponent },
 
-  {path:"edit/:id",component:EditDoctorComponent},
-  {path:"add",component:AddDoctorComponent},
-  {path:"profile/:id",component:DoctorProfileComponent},
-  {path:"details/:id",component:DoctorDatailsComponent},
+  // {path:"edit/:id",component:EditDoctorComponent},
+  // {path:"add",component:AddDoctorComponent},
+  // {path:"profile/:id",component:DoctorProfileComponent},
+  // {path:"details/:id",component:DoctorDatailsComponent},
 ]
 
 @NgModule({

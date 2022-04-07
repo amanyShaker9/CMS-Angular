@@ -59,13 +59,13 @@ export class AddAppointmentComponent implements OnInit {
       }
     });
     //testing.................
-    console.log(this.bookAppointment);
-    console.log( this.allDoctorAppointment);
-    console.log(this.bookAppointment.value.DoctorName);
-    if(this.allDoctorAppointment.length !=0){
-      console.log( this.allDoctorAppointment[0].doctorName);
+    // console.log(this.bookAppointment);
+    // console.log( this.allDoctorAppointment);
+    // console.log(this.bookAppointment.value.DoctorName);
+    // if(this.allDoctorAppointment.length !=0){
+    //   console.log( this.allDoctorAppointment[0].doctorName);
 
-    }
+    // }
     
     //------------------------------------
   if(this.allDoctorAppointment.length !=0){

@@ -27,8 +27,7 @@
                        <td>{{appointment.doctorName}}</td>
                        <td>{{appointment.Injury}}</td>
                        <td>
-                           <i class="fas fa-pen"></i>
-                           <i (click)="DeleteAppointment(appointment.id)" class="fas fa-book"></i>
+                           <button class="btn btn-outline-danger" (click)="DeleteAppointment(appointment.id)">Delete</button>
                        </td>                 
                    </tr>
 

@@ -10,11 +10,11 @@ import { PrescriptionListComponent } from './prescription-list/prescription-list
 import { DetailsPrescriptionComponent } from './details-prescription/details-prescription.component';
 
 const routes:Routes=[
-  {path:"",redirectTo:"/Prescription",pathMatch:"full"},
-  {path:'Prescription',component: PrescriptionListComponent},
-  {path:'Prescription/add',component:AddPrescriptionComponent,pathMatch:"full"},
-  {path:'Prescription/:id',component: EditPrescriptionComponent,pathMatch:"full"},
-  {path:'Prescription/details/:id',component:DetailsPrescriptionComponent,pathMatch:"full"},
+  // {path:"",redirectTo:"/Prescription",pathMatch:"full"},
+  // {path:'Prescription',component: PrescriptionListComponent},
+  // {path:'Prescription/add',component:AddPrescriptionComponent,pathMatch:"full"},
+  // {path:'Prescription/:id',component: EditPrescriptionComponent,pathMatch:"full"},
+  // {path:'Prescription/details/:id',component:DetailsPrescriptionComponent,pathMatch:"full"},
   ]
 
 
