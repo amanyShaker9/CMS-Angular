@@ -22,23 +22,7 @@ export class AddAppointmentComponent implements OnInit {
         this.allDoctors=data;
       }
     });
-
-    // function to full doctor Appointment
-    this._AppointmentService.getDoctorAppointment().subscribe({
-      next:(data)=>{
-        this.allDoctorAppointment=data;
-      }
-    })
-   
   }
-
-  // allAppointment(){
-  //   this._AppointmentService.getDoctorAppointment().subscribe({
-  //     next:(data)=>{
-  //       this.allDoctorAppointment=data;
-  //     }
-  //   })
-  // }
 
   bookAppointment=new FormGroup({
     id:new FormControl('',Validators.required),
@@ -52,22 +36,17 @@ export class AddAppointmentComponent implements OnInit {
     Injuiry:new FormControl('',Validators.required),
   });
 
+  LoopFlag:boolean=false;
    add(){
     this._AppointmentService.getDoctorAppointment().subscribe({
       next:(data)=>{
-        this.allDoctorAppointment=data;
+        this.allDoctorAppointment= data;
       }
     });
-    //testing.................
-    // console.log(this.bookAppointment);
-    // console.log( this.allDoctorAppointment);
-    // console.log(this.bookAppointment.value.DoctorName);
-    // if(this.allDoctorAppointment.length !=0){
-    //   console.log( this.allDoctorAppointment[0].doctorName);
 
-    // }
-    
     //------------------------------------
+
+    
   if(this.allDoctorAppointment.length !=0){
     
      for(let i=0; i<this.allDoctorAppointment.length;i++){
@@ -75,10 +54,13 @@ export class AddAppointmentComponent implements OnInit {
         this.bookAppointment.value.AppointmentDate== this.datePipe.transform(this.allDoctorAppointment[i].appointmentDate,'yyyy-MM-dd')  &&
         this.bookAppointment.value.AppointmentTime==this.allDoctorAppointment[i].appointmentTime
         ){
-
+          this.LoopFlag=true;
           alert("this time is not Avaliable , You can change time or day");
+          break;
         }
-     else{
+      } // for End
+    
+      if(this.LoopFlag==false){
       let newDoctorAppointment={
         DoctorName:this.bookAppointment.value.DoctorName,
         AppointmentDate: this.bookAppointment.value.AppointmentDate,
@@ -97,7 +79,7 @@ export class AddAppointmentComponent implements OnInit {
       });
      
      } // if end
-    } // for End
+    
   } // end first condition
   else{
     console.log("hello from else");
@@ -106,19 +88,22 @@ export class AddAppointmentComponent implements OnInit {
       AppointmentDate: this.bookAppointment.value.AppointmentDate,
       AppointmentTime:this.bookAppointment.value.AppointmentTime
      };
-     console.log(newDoctorAppointment);
+     console.log("new Doctor Appointment",newDoctorAppointment);
      this._AppointmentService.addDoctorAppointment(newDoctorAppointment).subscribe({
       next:(data)=>{
-       console.log("Doctor Appointment"+data.message);
+       console.log("Doctor Appointment"+" "+data.message);
        
       }
     });
-
+    console.log("this bookAppointment",this.bookAppointment.value);
     this._AppointmentService.bookAppointment(this.bookAppointment.value).subscribe({
       next:(data)=>{
         
-          console.log("Appointment"+data.message);
+          console.log("Appointment"+""+data.message);
       },
+      error:(e)=>{
+        console.log(e)
+      }
     });
    
   }

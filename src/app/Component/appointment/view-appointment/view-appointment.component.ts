@@ -20,6 +20,7 @@ viewAllAppointment(){
   this._AppointmentService.getAllAppointment().subscribe({
     next:(data)=>{
      this.allAppointments=data;
+     console.log(this.allAppointments);
     }
   })
 
